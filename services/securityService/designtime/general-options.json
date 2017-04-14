@@ -1,0 +1,29 @@
+{
+  "enforceSecurity" : false,
+  "rememberMeConfig" : null,
+  "sslConfig" : {
+    "sslPort" : 443,
+    "useSSL" : false,
+    "excludedUrls" : null
+  },
+  "xssConfig" : {
+    "enforceXssSecurity" : false,
+    "policyFile" : "wm-xss-policies.xml",
+    "xssFilterStrategy" : "NONE",
+    "policyType" : null
+  },
+  "csrfConfig" : {
+    "enforceCsrfSecurity" : false,
+    "headerName" : "X-WM-XSRF-TOKEN"
+  },
+  "authProviders" : [ "DEMO" ],
+  "login" : {
+    "type" : "PAGE",
+    "pageName" : "Login",
+    "sessionTimeout" : {
+      "type" : "DIALOG",
+      "pageName" : null,
+      "timeoutValue" : 30
+    }
+  }
+}
