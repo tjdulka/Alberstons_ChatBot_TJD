@@ -51,6 +51,40 @@
     "isList" : false,
     "saveInPhonegap" : false
   },
+  "svcOrderDetail" : {
+    "_id" : "wm-svcOrderDetail-wm.ServiceVariable-1492210780952",
+    "name" : "svcOrderDetail",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "order",
+      "value" : "bind:Variables.order_for_detail.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrderDetail.RootResponse",
+    "service" : "svcOrderDetail",
+    "operation" : "invoke",
+    "operationId" : "svcOrderDetail_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "svcOrderDetailonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
   "svcOrdersByProduct" : {
     "_id" : "wm-svcOrdersByProduct-wm.ServiceVariable-1492209885814",
     "name" : "svcOrdersByProduct",
