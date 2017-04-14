@@ -33,8 +33,16 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                         };
                     }
                 });
-            } else
-                output_text[0] = 'Handler Undefinded for ' + output_text;
+            } else if (output_text[0].startsWith('(--OMS_GET_ORDER_STATUS--)')) {
+                var input = _.get(data, 'input');
+                output_text[0] = 'I will find you the status of order number ' + input.text;
+                $scope.Variables.htmlContent.dataSet = {
+                    "dataValue": ''
+                };
+                $scope.Variables.order_for_status.dataSet = {
+                    "dataValue": input.text
+                };
+            }
         }
 
     };
@@ -45,6 +53,22 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         msg += '<tr><td><b>Order Number</b></td><td><b>Delivery Date</b></td><td><b>Description</b></td><td><b>Order Quantity</b></td><td><b>Modify Quantity</b></td><td><b>Ship Quantity</b></td></tr>';
         data.results.ORDERS.forEach(function(order, index) {
             msg += '<tr><td>' + order.ORDER_NBR + '</td><td>' + order.SCHEDULE_DELIVERY_DT + '</td><td>' + order.ITEM_DSC + '</td><td>' + order.ORDER_QTY + '</td><td>' + order.MODIFY_QTY + '</td><td>' + order.SHIP_QTY + '</td></tr>';
+        });
+
+        msg += '</tbody></table>';
+        console.log('msg: ', msg);
+        $scope.Variables.htmlContent.dataSet = {
+            "dataValue": msg
+        };
+    };
+
+
+    $scope.svcOrderStatusonResult = function(variable, data) {
+        var msg = '<table style="text-align: left; " border="0" cellpadding="2" cellspacing="2"><tbody>';
+        msg += '<tr><td><b>Order Number:</b></td><td colspan="5">' + data.results.ORDER_NBR + '</td></tr>';
+        msg += '<tr><td><b>Order Date</b></td><td><b>Ship Facility</b></td><td><b>Store</b></td><td><b>User ID</b></td><td><b>Delivery Date</b></td></tr>';
+        data.results.ORDER_STATUS.forEach(function(order, index) {
+            msg += '<tr><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td><td>' + order.DEST_FACILITY_ID + '</td><td>' + order.DW_CREATE_USER_ID + '</td><td>' + order.SCHEDULE_DELIVERY_DT + '</td></tr>';
         });
 
         msg += '</tbody></table>';

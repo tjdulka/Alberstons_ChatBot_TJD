@@ -84,5 +84,39 @@
     "transformationRequired" : false,
     "saveInPhonegap" : false,
     "controller" : "RestServiceVirtual"
+  },
+  "svcOrderStatus" : {
+    "_id" : "wm-svcOrderStatus-wm.ServiceVariable-1492210355250",
+    "name" : "svcOrderStatus",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "order",
+      "value" : "bind:Variables.order_for_status.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrderStatus.RootResponse",
+    "service" : "svcOrderStatus",
+    "operation" : "invoke",
+    "operationId" : "svcOrderStatus_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "svcOrderStatusonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
   }
 }
