@@ -1,0 +1,88 @@
+{
+  "htmlContent" : {
+    "_id" : "wm-htmlContent-wm.Variable-1492209960077",
+    "name" : "htmlContent",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "order_for_detail" : {
+    "_id" : "wm-order_for_detail-wm.Variable-1492209683054",
+    "name" : "order_for_detail",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "order_for_status" : {
+    "_id" : "wm-order_for_status-wm.Variable-1492209667236",
+    "name" : "order_for_status",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "product" : {
+    "_id" : "wm-product-wm.Variable-1492209647852",
+    "name" : "product",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "svcOrdersByProduct" : {
+    "_id" : "wm-svcOrdersByProduct-wm.ServiceVariable-1492209885814",
+    "name" : "svcOrdersByProduct",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "product",
+      "value" : "bind:Variables.product.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrdersByProduct.RootResponse",
+    "service" : "svcOrdersByProduct",
+    "operation" : "invoke",
+    "operationId" : "svcOrdersByProduct_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "svcOrdersByProductonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  }
+}

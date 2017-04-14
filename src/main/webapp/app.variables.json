@@ -23,6 +23,32 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "OmsPassword" : {
+    "_id" : "wm-OmsPassword-wm.Variable-1492209729089",
+    "name" : "OmsPassword",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "p@ssw0rd"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "OmsUsername" : {
+    "_id" : "wm-OmsUsername-wm.Variable-1492209710753",
+    "name" : "OmsUsername",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "watson"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
     "name" : "supportedLocale",
