@@ -2,18 +2,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
-    $scope.onPageReady = function() {
-        /*
-         * variables can be accessed through '$scope.Variables' property here
-         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
-         * $scope.Variables.loggedInUser.getData()
-         *
-         * widgets can be accessed through '$scope.Widgets' property here
-         * e.g. to get value of text widget named 'username' use following script
-         * '$scope.Widgets.username.datavalue'
-         */
-    };
-
+    $scope.onPageReady = function() {};
 
     $scope.askWatsonWatsonresponse = function($isolateScope) {
         var data = $isolateScope.watsonresponse;
@@ -83,11 +72,8 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                 $scope.Variables.htmlContent.dataSet = {
                     "dataValue": ''
                 };
-
             }
-
         }
-
     };
 
     $scope.svcOrdersByProductonResult = function(variable, data) {
@@ -98,7 +84,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             data.results.ORDERS.forEach(function(order, index) {
                 msg += '<tr><td>' + order.ORDER_NBR + '</td><td>' + order.SCHEDULE_DELIVERY_DT + '</td><td>' + order.ITEM_DSC + '</td><td>' + order.ORDER_QTY + '</td><td>' + order.MODIFY_QTY + '</td><td>' + order.SHIP_QTY + '</td></tr>';
             });
-
             msg += '</tbody></table>';
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
@@ -118,7 +103,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             data.results.ORDER_STATUS.forEach(function(order, index) {
                 msg += '<tr><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td><td>' + order.DEST_FACILITY_ID + '</td><td>' + order.DW_CREATE_USER_ID + '</td><td>' + order.SCHEDULE_DELIVERY_DT + '</td></tr>';
             });
-
             msg += '</tbody></table>';
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
@@ -139,7 +123,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             data.results.ORDER_DETAIL.forEach(function(order, index) {
                 msg += '<tr><td>' + order.ITEM_DSC + '</td><td>' + order.ORDER_QTY + '</td><td>' + order.MODIFY_QTY + '</td><td>' + order.SHIP_QTY + '</td></tr>';
             });
-
             msg += '</tbody></table>';
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
@@ -159,7 +142,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             data.results.ORDERS.forEach(function(order, index) {
                 msg += '<tr><td>' + order.DEST_FACILITY_ID + '</td><td>' + order.ORDER_NBR + '</td><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td></tr>';
             });
-
             msg += '</tbody></table>';
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
@@ -175,7 +157,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             data.results.ORDERS.forEach(function(order, index) {
                 msg += '<tr><td>' + order.ORDER_NBR + '</td><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td><td>' + order.DEST_FACILITY_ID + '</td></tr>';
             });
-
             msg += '</tbody></table>';
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
@@ -195,7 +176,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             data.results.ORDERS.forEach(function(order, index) {
                 msg += '<tr><td>' + order.ORDER_NBR + '</td><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td></tr>';
             });
-
             msg += '</tbody></table>';
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
