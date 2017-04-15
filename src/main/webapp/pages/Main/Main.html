@@ -58,19 +58,19 @@
                             <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label7"></wm-label>
                             <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByStore.dataSet.results.DEST_FACILITY_ID" name="label8"></wm-label>
                             <wm-grid title="" dataset="bind:Variables.svcOrdersByStore.dataSet.results.ORDERS" navigation="Pager" name="grid5">
-                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                                <wm-grid-column binding="ORDER_DT" caption="Order Date" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                             </wm-grid>
                         </wm-container>
                         <wm-container name="OrdersByUserContainer">
                             <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label9"></wm-label>
                             <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByUser.dataSet.results.DW_CREATE_USER_ID" name="label10"></wm-label>
                             <wm-grid title="" dataset="bind:Variables.svcOrdersByUser.dataSet.results.ORDERS" navigation="Pager" name="grid6">
-                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                                <wm-grid-column binding="ORDER_DT" caption="Order Date" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
-                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Dest Facility Id" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Dest Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                             </wm-grid>
                         </wm-container>
                     </wm-gridcolumn>
