@@ -2,7 +2,14 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
-    $scope.onPageReady = function() {};
+    $scope.onPageReady = function() {
+        $scope.Widgets.OrdersContainer.show = false;
+        $scope.Widgets.OrderStatusContainer.show = false;
+        $scope.Widgets.OrderDetailContainer.show = false;
+        $scope.Widgets.OrdersByProductContainer.show = false;
+        $scope.Widgets.OrdersByStoreContainer.show = false;
+        $scope.Widgets.OrdersByUserContainer.show = false;
+    };
 
     $scope.askWatsonWatsonresponse = function($isolateScope) {
         var data = $isolateScope.watsonresponse;
@@ -91,6 +98,12 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Variables.product.dataSet = {
                 "dataValue": ''
             };
+            $scope.Widgets.OrdersContainer.show = false;
+            $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderDetailContainer.show = false;
+            $scope.Widgets.OrdersByProductContainer.show = true;
+            $scope.Widgets.OrdersByStoreContainer.show = false;
+            $scope.Widgets.OrdersByUserContainer.show = false;
         };
     };
 
@@ -110,6 +123,13 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Variables.order_for_status.dataSet = {
                 "dataValue": ''
             };
+            $scope.Widgets.OrdersContainer.show = false;
+            $scope.Widgets.OrderStatusContainer.show = true;
+            $scope.Widgets.OrderDetailContainer.show = false;
+            $scope.Widgets.OrdersByProductContainer.show = false;
+            $scope.Widgets.OrdersByStoreContainer.show = false;
+            $scope.Widgets.OrdersByUserContainer.show = false;
+
         };
 
     };
@@ -130,6 +150,12 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Variables.order_for_status.dataSet = {
                 "dataValue": ''
             };
+            $scope.Widgets.OrdersContainer.show = false;
+            $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderDetailContainer.show = true;
+            $scope.Widgets.OrdersByProductContainer.show = false;
+            $scope.Widgets.OrdersByStoreContainer.show = false;
+            $scope.Widgets.OrdersByUserContainer.show = false;
         };
     };
 
@@ -146,6 +172,12 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Variables.htmlContent.dataSet = {
                 "dataValue": msg
             };
+            $scope.Widgets.OrdersContainer.show = true;
+            $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderDetailContainer.show = false;
+            $scope.Widgets.OrdersByProductContainer.show = false;
+            $scope.Widgets.OrdersByStoreContainer.show = false;
+            $scope.Widgets.OrdersByUserContainer.show = false;
         };
     };
 
@@ -164,6 +196,12 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Variables.user.dataSet = {
                 "dataValue": ''
             };
+            $scope.Widgets.OrdersContainer.show = false;
+            $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderDetailContainer.show = false;
+            $scope.Widgets.OrdersByProductContainer.show = false;
+            $scope.Widgets.OrdersByStoreContainer.show = false;
+            $scope.Widgets.OrdersByUserContainer.show = true;
         };
     };
 
@@ -183,7 +221,55 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Variables.store.dataSet = {
                 "dataValue": ''
             };
+            $scope.Widgets.OrdersContainer.show = false;
+            $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderDetailContainer.show = false;
+            $scope.Widgets.OrdersByProductContainer.show = false;
+            $scope.Widgets.OrdersByStoreContainer.show = true;
+            $scope.Widgets.OrdersByUserContainer.show = false;
         };
     };
 
 }]);
+
+Application.$controller("grid1Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("grid3Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("grid4Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("grid4_1Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("grid5Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("grid6Controller", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
