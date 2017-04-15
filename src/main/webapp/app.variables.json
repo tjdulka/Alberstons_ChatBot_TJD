@@ -23,6 +23,68 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
+  "loggedInUser" : {
+    "_id" : "wm-loggedInUser-wm.Variable-1492232529142",
+    "name" : "loggedInUser",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "name" : "",
+      "id" : "",
+      "tenantId" : "",
+      "isAuthenticated" : false,
+      "isSecurityEnabled" : true,
+      "roles" : [ ]
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "loginVariable" : {
+    "_id" : "wm-loginVariable-wm.LoginVariable-1492232529142",
+    "name" : "loginVariable",
+    "owner" : "App",
+    "category" : "wm.LoginVariable",
+    "dataBinding" : [ {
+      "target" : "username",
+      "value" : "bind:Widgets.usernametext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "password",
+      "value" : "bind:Widgets.passwordtext.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "rememberme",
+      "value" : "bind:Widgets.remembermecheck.datavalue",
+      "type" : "boolean"
+    } ],
+    "dataSet" : {
+      "username" : "",
+      "password" : "",
+      "rememberme" : false
+    },
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "onError" : "loginVariableonError($event, $s)",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "useDefaultSuccessHandler" : true
+  },
+  "logoutVariable" : {
+    "_id" : "wm-logoutVariable-wm.LogoutVariable-1492232529142",
+    "name" : "logoutVariable",
+    "owner" : "App",
+    "category" : "wm.LogoutVariable",
+    "type" : "string",
+    "saveInPhonegap" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "redirectTo" : "Login",
+    "useDefaultSuccessHandler" : true
+  },
   "OmsPassword" : {
     "_id" : "wm-OmsPassword-wm.Variable-1492209729089",
     "name" : "OmsPassword",
