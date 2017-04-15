@@ -46,6 +46,20 @@
                     <exclude>**/*.java</exclude>
                 </excludes>
             </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/svcOrdersByStore/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/svcOrdersByUser/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
         </resources>
         <finalName>Alberstons_ChatBot_TJD</finalName>
         <filters>
@@ -130,6 +144,8 @@
                                 <source>services/svcOrderStatus/src</source>
                                 <source>services/svcOrders/src</source>
                                 <source>services/svcOrdersByProduct/src</source>
+                                <source>services/svcOrdersByStore/src</source>
+                                <source>services/svcOrdersByUser/src</source>
                             </sources>
                         </configuration>
                     </execution>

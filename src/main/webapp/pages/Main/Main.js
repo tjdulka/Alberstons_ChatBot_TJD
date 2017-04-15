@@ -33,6 +33,24 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                         };
                     }
                 });
+            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_STORE--)')) {
+                var input = _.get(data, 'input');
+                output_text[0] = 'I will find you a list of orders by store number ' + input.text;
+                $scope.Variables.htmlContent.dataSet = {
+                    "dataValue": ''
+                };
+                $scope.Variables.store.dataSet = {
+                    "dataValue": input.text
+                };
+            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_USER--)')) {
+                var input = _.get(data, 'input');
+                output_text[0] = 'I will find a list of orders by user ' + input.text;
+                $scope.Variables.htmlContent.dataSet = {
+                    "dataValue": ''
+                };
+                $scope.Variables.user.dataSet = {
+                    "dataValue": input.text
+                };
             } else if (output_text[0].startsWith('(--OMS_GET_ORDER_STATUS--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find you the status of order number ' + input.text;
@@ -148,4 +166,44 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             };
         };
     };
+
+    $scope.svcOrdersByUseronResult = function(variable, data) {
+        if (data.results.DW_CREATE_USER_ID != '') {
+            var msg = '<table style="text-align: left; " border="0" cellpadding="2" cellspacing="2"><tbody>';
+            msg += '<tr><td><b>User:</b></td><td colspan="3">' + data.results.DW_CREATE_USER_ID + '</td></tr>';
+            msg += '<tr><td><b>Order Nbr</b></td><td><b>Order Date</b></td><td><b>Whse</b></td><td><b>Store</b></td></tr>';
+            data.results.ORDERS.forEach(function(order, index) {
+                msg += '<tr><td>' + order.ORDER_NBR + '</td><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td><td>' + order.DEST_FACILITY_ID + '</td></tr>';
+            });
+
+            msg += '</tbody></table>';
+            $scope.Variables.htmlContent.dataSet = {
+                "dataValue": msg
+            };
+            $scope.Variables.user.dataSet = {
+                "dataValue": ''
+            };
+        };
+    };
+
+
+    $scope.svcOrdersByStoreonResult = function(variable, data) {
+        if (data.results.DEST_FACILITY_ID != '') {
+            var msg = '<table style="text-align: left; " border="0" cellpadding="2" cellspacing="2"><tbody>';
+            msg += '<tr><td><b>Store:</b></td><td colspan="2">' + data.results.DEST_FACILITY_ID + '</td></tr>';
+            msg += '<tr><td><b>Order Nbr</b></td><td><b>Order Date</b></td><td><b>Whse</b></td></tr>';
+            data.results.ORDERS.forEach(function(order, index) {
+                msg += '<tr><td>' + order.ORDER_NBR + '</td><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td></tr>';
+            });
+
+            msg += '</tbody></table>';
+            $scope.Variables.htmlContent.dataSet = {
+                "dataValue": msg
+            };
+            $scope.Variables.store.dataSet = {
+                "dataValue": ''
+            };
+        };
+    };
+
 }]);
