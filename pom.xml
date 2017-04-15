@@ -13,6 +13,13 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/mybluemix/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -118,6 +125,7 @@
                         <configuration>
                             <sources>
                             
+                                <source>services/mybluemix/src</source>
                                 <source>services/securityService/src</source>
                                 <source>services/svcOrderDetail/src</source>
                                 <source>services/svcOrderStatus/src</source>

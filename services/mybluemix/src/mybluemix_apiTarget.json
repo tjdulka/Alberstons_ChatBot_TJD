@@ -1,0 +1,105 @@
+{
+  "tags" : [ {
+    "description" : "Rest service swagger documentation",
+    "name" : "RestServiceVirtualController"
+  } ],
+  "basePath" : "${rest.mybluemix.basepath}",
+  "paths" : {
+    "/orders" : {
+      "x-WM-BASE_PATH" : "/orders",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "produces" : [ "text/html" ],
+        "security" : [ {
+          "WM_Rest_Service_Authorization" : [ ]
+        } ],
+        "parameters" : [ {
+          "name" : "forceInvoke",
+          "type" : "string",
+          "required" : false,
+          "in" : "header"
+        } ],
+        "consumes" : [ "text/xml" ],
+        "responses" : {
+          "200" : {
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            },
+            "description" : "Success"
+          }
+        },
+        "operationId" : "mybluemix_RestServiceVirtualController-invoke"
+      },
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.mybluemix.scheme}://${rest.mybluemix.host}${rest.mybluemix.basepath}/orders"
+    }
+  },
+  "host" : "${rest.mybluemix.host}",
+  "schemes" : [ "${rest.mybluemix.scheme}" ],
+  "swagger" : "2.0",
+  "definitions" : {
+    "RootResponse" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "results" : {
+          "$ref" : "#/definitions/results"
+        }
+      },
+      "required" : [ "results" ]
+    },
+    "results" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.results",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "ORDERS" : {
+          "x-WM-IS_LIST" : true,
+          "items" : {
+            "$ref" : "#/definitions/ORDERSEntryItem"
+          },
+          "uniqueItems" : false,
+          "type" : "array"
+        }
+      },
+      "required" : [ "ORDERS" ]
+    },
+    "ORDERSEntryItem" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.ORDERSEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ],
+      "properties" : {
+        "SHIP_FACILITY_ID" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ORDER_DT" : {
+          "type" : "string"
+        },
+        "DEST_FACILITY_ID" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ORDER_NBR" : {
+          "format" : "int32",
+          "type" : "integer"
+        }
+      },
+      "required" : [ "DEST_FACILITY_ID", "ORDER_DT", "ORDER_NBR", "SHIP_FACILITY_ID" ]
+    }
+  },
+  "securityDefinitions" : {
+    "WM_Rest_Service_Authorization" : {
+      "type" : "basic"
+    }
+  },
+  "info" : {
+    "x-WM-SERVICE_TYPE" : "RestService",
+    "x-WM-API_ID" : "60065970-ae14-4f3a-8f6e-bad4a4513891",
+    "x-WM-USE_PROXY_FOR_WEB" : true,
+    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-USE_PROXY_FOR_MOBILE" : true,
+    "version" : "2.0"
+  }
+}
