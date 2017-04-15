@@ -3,7 +3,7 @@
     "description" : "Rest service swagger documentation",
     "name" : "RestServiceVirtualController"
   } ],
-  "basePath" : "${rest.mybluemix.basepath}",
+  "basePath" : "${rest.svcOrders.basepath}",
   "paths" : {
     "/orders" : {
       "x-WM-BASE_PATH" : "/orders",
@@ -31,18 +31,18 @@
             "description" : "Success"
           }
         },
-        "operationId" : "mybluemix_RestServiceVirtualController-invoke"
+        "operationId" : "svcOrders_RestServiceVirtualController-invoke"
       },
       "x-WM-RELATIVE_PATH" : "",
-      "x-WM-COMPLETE_PATH" : "${rest.mybluemix.scheme}://${rest.mybluemix.host}${rest.mybluemix.basepath}/orders"
+      "x-WM-COMPLETE_PATH" : "${rest.svcOrders.scheme}://${rest.svcOrders.host}${rest.svcOrders.basepath}/orders"
     }
   },
-  "host" : "${rest.mybluemix.host}",
-  "schemes" : [ "${rest.mybluemix.scheme}" ],
+  "host" : "${rest.svcOrders.host}",
+  "schemes" : [ "${rest.svcOrders.scheme}" ],
   "swagger" : "2.0",
   "definitions" : {
     "RootResponse" : {
-      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.RootResponse",
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrders.RootResponse",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ],
       "properties" : {
         "results" : {
@@ -52,7 +52,7 @@
       "required" : [ "results" ]
     },
     "results" : {
-      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.results",
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrders.results",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ],
       "properties" : {
         "ORDERS" : {
@@ -67,7 +67,7 @@
       "required" : [ "ORDERS" ]
     },
     "ORDERSEntryItem" : {
-      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.ORDERSEntryItem",
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrders.ORDERSEntryItem",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ],
       "properties" : {
         "SHIP_FACILITY_ID" : {
@@ -96,9 +96,9 @@
   },
   "info" : {
     "x-WM-SERVICE_TYPE" : "RestService",
-    "x-WM-API_ID" : "60065970-ae14-4f3a-8f6e-bad4a4513891",
+    "x-WM-API_ID" : "07210994-c410-4f1b-81fb-ad5df7a009cc",
     "x-WM-USE_PROXY_FOR_WEB" : true,
-    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-SERVICE_ID" : "mybluemix2",
     "x-WM-USE_PROXY_FOR_MOBILE" : true,
     "version" : "2.0"
   }

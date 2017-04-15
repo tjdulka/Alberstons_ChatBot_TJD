@@ -25,40 +25,6 @@
     "isList" : false,
     "saveInPhonegap" : false
   },
-  "mybluemix" : {
-    "_id" : "wm-mybluemix-wm.ServiceVariable-1492222713371",
-    "name" : "mybluemix",
-    "owner" : "Page",
-    "category" : "wm.ServiceVariable",
-    "dataBinding" : [ {
-      "target" : "forceInvoke",
-      "value" : "bind:Variables.forceOrdersInvoke.dataSet.dataValue",
-      "type" : "string"
-    }, {
-      "target" : "wm_auth_username",
-      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
-    }, {
-      "target" : "wm_auth_password",
-      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
-    } ],
-    "type" : "mybluemix.RootResponse",
-    "service" : "mybluemix",
-    "operation" : "invoke",
-    "operationId" : "mybluemix_RestServiceVirtualController-invoke",
-    "operationType" : "get",
-    "serviceType" : "RestService",
-    "dataSet" : [ ],
-    "isList" : false,
-    "maxResults" : 20,
-    "designMaxResults" : 10,
-    "onResult" : "mybluemixonResult($event, $scope)",
-    "startUpdate" : false,
-    "autoUpdate" : true,
-    "inFlightBehavior" : "executeLast",
-    "transformationRequired" : false,
-    "saveInPhonegap" : false,
-    "controller" : "RestServiceVirtual"
-  },
   "order_for_detail" : {
     "_id" : "wm-order_for_detail-wm.Variable-1492209683054",
     "name" : "order_for_detail",
@@ -125,6 +91,40 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "onResult" : "svcOrderDetailonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svcOrders" : {
+    "_id" : "wm-mybluemix-wm.ServiceVariable-1492222713371",
+    "name" : "svcOrders",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "forceInvoke",
+      "value" : "bind:Variables.forceOrdersInvoke.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrders.RootResponse",
+    "service" : "svcOrders",
+    "operation" : "invoke",
+    "operationId" : "svcOrders_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "Javascript",
     "startUpdate" : false,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",

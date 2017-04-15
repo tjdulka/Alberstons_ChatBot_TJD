@@ -3,9 +3,9 @@
   "info" : {
     "version" : "2.0",
     "x-WM-SERVICE_TYPE" : "RestService",
-    "x-WM-API_ID" : "60065970-ae14-4f3a-8f6e-bad4a4513891",
+    "x-WM-API_ID" : "07210994-c410-4f1b-81fb-ad5df7a009cc",
     "x-WM-USE_PROXY_FOR_WEB" : true,
-    "x-WM-SERVICE_ID" : "mybluemix",
+    "x-WM-SERVICE_ID" : "mybluemix2",
     "x-WM-USE_PROXY_FOR_MOBILE" : true
   },
   "host" : "tjd-dashdb.mybluemix.net",
@@ -19,7 +19,7 @@
     "/orders" : {
       "get" : {
         "tags" : [ "RestServiceVirtualController" ],
-        "operationId" : "mybluemix_RestServiceVirtualController-invoke",
+        "operationId" : "svcOrders_RestServiceVirtualController-invoke",
         "consumes" : [ "text/xml" ],
         "produces" : [ "text/html" ],
         "parameters" : [ {
@@ -44,7 +44,7 @@
       },
       "x-WM-TAG" : "RestServiceVirtualController",
       "x-WM-BASE_PATH" : "/orders",
-      "x-WM-COMPLETE_PATH" : "${rest.mybluemix.scheme}://${rest.mybluemix.host}${rest.mybluemix.basepath}/orders",
+      "x-WM-COMPLETE_PATH" : "${rest.svcOrders.scheme}://${rest.svcOrders.host}${rest.svcOrders.basepath}/orders",
       "x-WM-RELATIVE_PATH" : ""
     }
   },
@@ -61,7 +61,7 @@
           "$ref" : "#/definitions/results"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.RootResponse",
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrders.RootResponse",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "results" : {
@@ -76,7 +76,7 @@
           "x-WM-IS_LIST" : true
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.results",
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrders.results",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "ORDERSEntryItem" : {
@@ -98,7 +98,7 @@
           "format" : "int32"
         }
       },
-      "x-WM-FULLY_QUALIFIED_NAME" : "mybluemix.ORDERSEntryItem",
+      "x-WM-FULLY_QUALIFIED_NAME" : "svcOrders.ORDERSEntryItem",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     }
   }

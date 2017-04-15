@@ -134,21 +134,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
 
     $scope.svcOrdersonResult = function(variable, data) {
-        /* 
-        var msg = '<table style="text-align: left; " border="0" cellpadding="2" cellspacing="2"><tbody>';
-         msg += '<tr><td><b>Store</b></td><td><b>Order Number</b></td><td><b>Order Date</b></td><td><b>Whse</b></td></tr>';
-         data.results.ORDERS.forEach(function(order, index) {
-             msg += '<tr><td>' + order.DEST_FACILITY_ID + '</td><td>' + order.ORDER_NBR + '</td><td>' + order.ORDER_DT + '</td><td>' + order.SHIP_FACILITY_ID + '</td></tr>';
-         });
-
-         msg += '</tbody></table>';
-         $scope.Variables.htmlContent.dataSet = {
-             "dataValue": msg
-         };
-         */
-    };
-
-    $scope.mybluemixonResult = function(variable, data) {
         if ($scope.Variables.forceOrdersInvoke.dataSet.dataValue > 0) {
             console.log('counter: ', $scope.Variables.forceOrdersInvoke.dataSet.dataValue);
             var msg = '<table style="text-align: left; " border="0" cellpadding="2" cellspacing="2"><tbody>';
@@ -163,5 +148,4 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             };
         };
     };
-
 }]);
