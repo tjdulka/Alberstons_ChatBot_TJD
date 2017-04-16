@@ -1,5 +1,5 @@
 var _WM_APP_PROPERTIES = {
-  "activeTheme" : "flyer",
+  "activeTheme" : "autumn",
   "dateFormat" : "",
   "defaultLanguage" : "en",
   "displayName" : "Alberstons-ChatBot-TJD",

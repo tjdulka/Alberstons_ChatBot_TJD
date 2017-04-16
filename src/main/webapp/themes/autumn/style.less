@@ -1,4 +1,4 @@
-/*START - flyer Theme*/
+/*START - Autumn Theme*/
 
 .wm-app {
 
@@ -11,54 +11,60 @@
   background-color: @body-bg;
 
   //Header
-  @wm-header-border-color: rgba(0, 0, 0, 0.1);
-  @wm-header-text-color: #515253;
   @wm-header-bg-color: #fff;
+  @wm-header-text-color: inherit;
+  @wm-header-border-color: rgba(0, 0, 0, 0.1);
   @wm-header-height: auto;
 
-  //left panel
-  @wm-left-panel-bg: #fff;
-  @wm-left-panel-list-border: 1px #d5d4d9 solid;
-  @wm-left-panel-border-color: #cfdbe2;
+  //Left Panel
+  @wm-left-panel-bg: #f3f5f6;
+  @wm-left-panel-border-color: #CFDBE2;
   @wm-left-panel-link-color: #515253;
-  @wm-left-panel-link-hover-bg: transparent;
-  @wm-left-panel-link-hover-text-color: #fff;
-  @wm-left-panel-link-hover-border-color: #f5873e;
+  @wm-left-panel-link-active-bg: #fff;
+  @wm-left-panel-link-hover-bg: #e6e4e4;
+  @wm-left-panel-link-hover-text-color: @brand-primary;
+  @wm-left-panel-link-hover-border-color: @brand-primary;
   @wm-left-panel-dropdown-menu-bg: transparent;
 
   //right panel
-  @wm-right-panel-bg: #fff;
-  @wm-right-panel-border-color: #cfdbe2;
+  @wm-right-panel-bg: #f3f5f6;
+  @wm-right-panel-border-color: #CFDBE2;
   @wm-right-panel-link-color: #515253;
-  @wm-right-panel-list-border: 1px #f5f5f5 solid;
-
-  //Footer
-  @wm-footer-bg-color: #f5f7fA;
-  @wm-footer-border-color: #ccc;
-  @wm-footer-text-color: #515253;
-  @wm-footer-height: auto;
-
-  //Table
-  @table-header-bg: transparent;
 
   //Tabset
-  @nav-tabs-color-hover: @brand-primary;
-  @nav-tabs-link-bg: #d0deec;
+  @nav-tabs-color-hover : #fff;
+  @nav-tabs-link-bg: #fff;
 
   //input group hover
   @input-group-addon-hover-bg: #e7e7e7;
 
+  //Calendar
+  @wm-calendar-btn-border: #fff;
+
+  //Footer
+  @wm-footer-bg-color: #F5F7FA;
+  @wm-footer-border-color: #CCC;
+  @wm-footer-text-color: #515253;
+  @wm-footer-height: auto;
+
+  //Table
+  @table-header-bg: #fff;
+
   //Buttons
   @btn-group-active-btn-bg: #fff;
+
+  //Ratings
+  @wm-rating-text-color: @brand-primary;
+  @wm-rating-hover-text-color: #8a2d45;
 
   //modal dialogs
   @modal-header-bg: @navbar-default-bg;
   @modal-header-color: @navbar-default-color;
   @modal-header-border-color: #7B706A;
 
-  //Tile
-  @wm-tile-bg: #efeff9;
-  @wm-tile-border-color: @wm-left-panel-link-hover-border-color;
+  //Calendar
+  @wm-calendar-header-color: #adadad;
+  @wm-calendar-text-color: #adadad;
 
   .img-rounded {
     border-radius: @thumbnail-border-radius;
@@ -72,45 +78,51 @@
     width: 100%;
   }
 
+  //stylings for tile widget
+  .app-tile {
+    &.bg-danger, &.bg-success, &.bg-info, &.bg-warning {
+      color: @panel-primary-text;
+    }
+  }
+
   /***Tabs Widget: Styling for the tabs widget comes here********/
   //Tab Content
   .tab-content {
     .tab-body {
-      border-color: transparent;
+      border-color: @nav-tabs-border-color;
       padding: @padding-base-vertical @padding-base-horizontal;
     }
   }
   //navigation
   .nav-tabs {
-    border-bottom-color: transparent;
+    border-bottom-color: @nav-tabs-border-color;
     > li {
       > a, .app-menu a {
-        color: @text-color;
-        background-color: transparent;
-        border-bottom-color: transparent;
-        border-radius: @border-radius-base @border-radius-base 0 0;
+        color: @component-active-color;
+        background-color: @nav-tabs-active-link-hover-bg;
+        border-bottom-color: @nav-tabs-border-color;
+        border-radius: 0;
         box-shadow: none;
         margin-right: .2em;
         border-color: transparent;
+        border: 0;
         text-transform: uppercase;
         &:hover, &:focus {
-          color: inherit;
+          color: @nav-tabs-color-hover;
           background-color: @nav-tabs-active-link-hover-bg;
-          font-weight: bold; 
-          border-color: transparent;
+          border: 0;
         }
       }
       &.active {
         > a, .app-menu a {
-          background-color: @nav-tabs-active-link-hover-bg;
-          font-weight: bold; 
-          border-color: transparent;
-          color: inherit;
-          &:hover {
-            border-color: transparent;
-            color: inherit;
-            font-weight: bold; 
-            background-color: @nav-tabs-active-link-hover-bg;
+          border-color: transparent transparent @nav-tabs-border-color;
+          color: @text-color;
+          background-color: @nav-tabs-link-bg;
+          font-weight: bold;
+          &:hover, &:focus {
+            border-color: transparent transparent @nav-tabs-border-color;
+            color: @text-color;
+            background-color: @nav-tabs-link-bg;
           }
         }
       }
@@ -165,19 +177,8 @@
     .caret {
       margin-left: 0.7em;
     }
-    &.active, &:active {
-      -webkit-box-shadow: none;
-      box-shadow: none;
-    }
   }
 
-  .btn-default {
-    &:hover, &:focus &:active {
-      color: @btn-default-color;
-      background-color: darken(@btn-default-bg, 10%);
-      border-color: darken(@btn-default-bg, 10%);
-    }
-  }
 
   /***Modal Dialog Style: There is no property in bootstrap variable so setting it here********/
   .modal-header {
@@ -212,13 +213,18 @@
         }
       }
     }
+    > tbody > tr.active {
+      td, th {
+        color: @brand-primary;
+      }
+    }
   }
 
   /*****************************************************************************************************************************************/
   /*********************************************************Layout**************************************************************************/
   /*****************************************************************************************************************************************/
   .app-content-column {
-    background-color: #f3f3f3;
+    background-color: @body-bg;
     padding: 1em;
   }
 
@@ -230,10 +236,6 @@
     border-color: transparent;
     height: @wm-header-height;
 
-    a {
-      color: @wm-header-text-color;
-    }
-
     .app-mobile-header {
       background-color: @navbar-default-bg;
       color: @navbar-default-color;
@@ -242,10 +244,69 @@
       }
     }
   }
-  //Header box-shadow
-  .app-header {
-    .app-header-container {
-      z-index: 1;
+  //Top Nav Bar
+  .app-navbar {
+    border-radius: 0;
+    border: 0;
+    color: @navbar-default-color;
+
+    .navbar-nav {
+      li {
+        a {
+          font-size: 1em;
+          padding-left: 3em;
+          padding-right: 3em;
+          text-transform: uppercase;
+          font-weight: normal;
+          text-decoration: none;
+          word-spacing: .4em;
+          i {
+            margin-right: 0.417em;
+          }
+          &:hover, &:focus, &.active, &.app-popover-open {
+            color: @navbar-default-link-hover-color;
+            background-color: @navbar-default-hover-bg;
+            transition: color .5s ease, background .5s ease;
+            -webkit-transition: color .5s ease, background .5s ease;
+            -moz-transition: color .5s ease, background .5s ease;
+            -ms-transition: color .5s ease, background .5s ease;
+            -o-transition: color .5s ease, background .5s ease;
+          }
+        }
+
+        > .dropdown .dropdown-menu {
+          margin: 2px 0 0 0;
+          background-color: @navbar-default-bg;
+          border-radius: 4px;
+          a {
+            color: inherit;
+            padding: 1.5em;
+            &:hover {
+              background-color: @navbar-default-hover-bg;
+              color: @brand-primary;
+            }
+          }
+        }
+      }
+
+      .app-nav-item {
+        > .dropdown {
+          a.dropdown-toggle {
+            padding-left: 3em;
+            padding-right: 3em;
+            color: inherit;
+            padding-top: 1.5em;
+            padding-bottom: 1.5em;
+            &:hover {
+              color: @brand-primary;
+              background-color: @navbar-default-hover-bg;
+            }
+            .app-icon {
+              margin-right: 0;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -255,7 +316,6 @@
       .app-nav-item {
         .app-menu {
           .dropdown-toggle {
-            border-radius: @border-radius-base;
             padding: @nav-link-padding;
             &:hover {
               color: @brand-primary;
@@ -284,64 +344,6 @@
     }
   }
 
-  //Top Nav Bar
-  .app-navbar {
-    border-radius: 0;
-    border: 0;
-    color: @navbar-default-color;
-
-    .navbar-nav {
-      li {
-        a {
-          font-size: 1em;
-          padding-right: 3em;
-          text-transform: uppercase;
-          font-weight: normal;
-          text-decoration: none;
-          word-spacing: .4em;
-          i {
-            margin-right: 0.417em;
-          }
-          &:hover, &:focus, &.active, &.app-popover-open {
-            color: @navbar-default-link-hover-color;
-            background-color: @btn-default-bg;
-          }
-        }
-
-        > .dropdown .dropdown-menu {
-          margin: 0;
-          background-color: @navbar-default-bg;
-          a {
-            color: inherit;
-            padding: .65em 1em;
-            &:hover {
-              background-color: @btn-default-bg;
-            }
-          }
-        }
-      }
-
-      .app-nav-item {
-        > .dropdown {
-          a.dropdown-toggle {
-            padding-right: 3em;
-            padding-top: 1.5em;
-            padding-bottom: 1.5em;
-            color: inherit;
-          }
-        }
-      }
-    }
-  }
-
-  //Popover
-  .popover {
-    min-width: 16.667em;
-    .popover-content {
-      padding: 0;
-    }
-  }
-
   //Left & Right Panels
   .app-left-panel, .app-right-panel {
     .nav {
@@ -351,41 +353,36 @@
           > a {
             color: inherit;
             background-color: @wm-left-panel-link-hover-bg;
-            .app-icon {
-              color: inherit;
-            }
             &:hover, &:focus {
               color: inherit;
               background-color: @wm-left-panel-link-hover-bg;
-              .app-icon {
-                color: inherit;
-              }
             }
           }
         }
         margin-top: 0;
-        border-bottom: @wm-left-panel-list-border;
-        a, .btn, .dropdown a, .dropdown a.dropdown-toggle, .app-popover a {
+        border-bottom: transparent;
+
+        a, .btn, .dropdown a, .dropdown a.dropdown-toggle {
           font-size: 0.917em;
           text-transform: uppercase;
           letter-spacing: .025em;
           font-weight: 400;
-          padding: 2em 1em;
+          padding: 1em;
           position: relative;
           border-radius: 0;
           line-height: 1.7;
           color: @wm-left-panel-link-color;
-          border-right: 0.5em solid transparent;
+          border-left: 0.5em solid transparent;
           transition: color .5s ease, background .5s ease;
           -webkit-transition: color .5s ease, background .5s ease;
           -moz-transition: color .5s ease, background .5s ease;
           -ms-transition: color .5s ease, background .5s ease;
           -o-transition: color .5s ease, background .5s ease;
-          &:hover , &:hover .app-icon{
+          &:hover {
             color: @brand-primary;
             text-decoration: none;
-            background-color: @wm-left-panel-link-hover-bg;
-            border-right-color: transparent;
+            background-color: transparent;
+            border-left-color: transparent;
             transition: color .5s ease, background .5s ease;
             -webkit-transition: color .5s ease, background .5s ease;
             -moz-transition: color .5s ease, background .5s ease;
@@ -393,34 +390,27 @@
             -o-transition: color .5s ease, background .5s ease;
           }
           &.active {
-            background-color: @brand-primary;
-            border-right-color: @wm-left-panel-link-hover-border-color;
-            color: @wm-left-panel-link-hover-text-color;
-            .app-icon {
-              color: @wm-left-panel-link-hover-text-color;
-            }
+            background-color: @wm-left-panel-link-active-bg;
+            border-left-color: @brand-primary;
+            color: @brand-primary;
           }
           .app-icon {
-            color: @brand-primary;
-            margin-left: 0.833em;
             margin-right: 0.417em;
           }
         }
-        .badge {
-          top: 2em !important;
-        }
+
         > .dropdown.open {
           > .dropdown-menu {
             position: relative;
-            padding: 0.833em 0;
+            padding: 0;
             margin: 0 0 1.333em;
-            border: 0;
-            border-bottom: @wm-left-panel-border-color;
+            border-radius: 4px;
             box-shadow: none;
+            border: 0;
             background-color: @wm-left-panel-dropdown-menu-bg;
             li {
               a {
-                padding: 0.667em 1.667em;
+                padding: 1em 1em 1em 2.5em;
               }
             }
           }
@@ -432,6 +422,13 @@
         > .dropdown {
           > a {
             padding: 1.333em;
+          }
+        }
+        &.active {
+          > .dropdown {
+            > a, a:hover, a:focus {
+              background-color: @wm-left-panel-link-hover-bg;
+            }
           }
         }
       }
@@ -480,6 +477,9 @@
       border: 1px solid @input-border-focus;
       box-shadow: none;
     }
+    &:active {
+      border-color: @brand-info;
+    }
   }
   .form-control-static {
     padding-bottom: 0;
@@ -491,12 +491,6 @@
     //for labels in the form
     .control-label {
       padding: @padding-base-vertical @padding-base-horizontal 0 @padding-base-horizontal;
-    }
-    //action buttons in the form
-    .form-action {
-      .btn {
-        border-radius: @border-radius-base;
-      }
     }
 
     //Styling File Upload in IE
@@ -518,6 +512,7 @@
   /***search widget****/
   .app-search {
     .input-group-addon {
+      padding: 0.667em;
       &:hover {
         background: @input-group-addon-hover-bg;
       }
@@ -580,8 +575,8 @@
     .app-accordion-panel {
       .panel-heading {
         .panel-actions {
-          color: @brand-primary;
           right: 1em;
+          top: 1.3em;
         }
       }
     }
@@ -617,8 +612,8 @@
             font-size: 1em;
             background: @btn-default-bg;
             color: @btn-default-color;
+            border: none;
             padding: 0.55em .83em;
-            border-radius: 0;
           }
         }
       }
@@ -626,8 +621,8 @@
 
     tbody {
       .btn-default {
-        background-color: @body-bg;
-        border-color: @component-active-color;
+        background-color: transparent;
+        border-color: @wm-calendar-btn-border;
         color: @text-color;
         width: auto;
         padding: 0.55em .83em;
@@ -635,10 +630,9 @@
           background-color: lighten(@brand-primary, 30%);
           color: @text-color;
         }
-        &:hover, &:focus &:active {
+        &:hover {
           background-color: @component-active-bg;
           border-color: @component-active-bg;
-          box-shadow: none;
           color: @component-active-color;
           .text-info {
             color: inherit;
@@ -681,8 +675,8 @@
         width: 100%;
         background-color: transparent;
         &:hover {
-          background-color: @btn-primary-bg;
-          color: @btn-primary-color;
+          background-color: transparent;
+          color: @btn-primary-bg;
         }
       }
     }
@@ -691,31 +685,25 @@
   //Calendar Specific
   .app-calendar {
     background-color: @body-bg;
-    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0.167em 0 rgba(0, 0, 0, 0.05);
     .fc {
-      .fc-state-default {
-        background: @btn-default-bg;
-        border: 1px solid @btn-default-border;
-        color: @btn-default-color;
-        text-shadow: none;
-        &.fc-state-hover, &:focus, &.fc-state-active {
-          color: @component-active-color;
-          background: @component-active-bg;
-          border: 1px solid @component-active-bg;
-        }
-      }
+       .fc-state-default {
+          background: @btn-default-bg;
+          border: 1px solid @btn-default-border;
+          color: @btn-default-color;
+          &.fc-state-hover, &:focus, &.fc-state-active {
+            color: @component-active-color;
+            background: @component-active-bg;
+            border: 1px solid @component-active-bg;
+          }
+       }
     }
-
     .fc {
       .fc-toolbar {
         h2 {
           color: @text-color;
         }
       }
-    }
-    .fc-event {
-      background-color: @component-active-bg;
-      color: @component-active-color;
     }
     .fc-widget-header {
       background-color: @body-bg;
@@ -728,13 +716,16 @@
     }
     .fc-day-number {
       padding: .5em .3em;
+      color: @wm-calendar-text-color;
       font-size: 1.52em;
       text-align: left;
     }
   }
+
 /*********************************************************************************************************************************************/
 /****************************************************Advanced editors******************************************************************************/
 /*********************************************************************************************************************************************/
+/******rich-editor class*******/
   .app-richtexteditor {
     .btn-default {
       background-color: @gray-lighter;
@@ -743,7 +734,7 @@
       &.disabled, &[disabled], &.disabled:hover, &[disabled]:hover, &.disabled:focus, &[disabled]:focus,
       &.disabled.focus, &.focus[disabled], &.disabled:active, &[disabled]:active, &.disabled.active, &.active[disabled],
       &.disabled.active, &.active[disabled] {
-        background: @gray-lighter;
+        background-color: @gray-lighter;
         color: @text-color;
       }
       &:focus, &.active , &:active:hover  {
@@ -752,12 +743,16 @@
          border-color: @component-active-bg;
       }
     }
+    .ta-root .ta-toolbar .btn-group .btn {
+      height: 2.917em;
+      padding: 0.833em;
+    }
   }
 
   fieldset[disabled] {
     .app-richtexteditor {
       .btn-default, .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
-        background-color: @gray-lighter;
+        background: @gray-lighter;
         color: @text-color;
       }
     }
@@ -786,15 +781,33 @@
     &.input-group {
       width: 13em;
     }
+    .input-group-addon {
+      padding: 0.833em 1.333em;
+    }
   }
-/***popover class: removing the radius*******/
+/***popover class*******/
   .popover {
-    padding: 0;
+    min-width: 16.667em;
     border-radius: @border-radius-base;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
     color: @text-color;
   }
 
+/***ratings widget styling*******************/
+  .app-ratings {
+    .rating-style > label {
+      color: @wm-rating-text-color;
+
+      &:hover, &:hover ~ label {
+        color: @wm-rating-hover-text-color;
+      }
+
+      &.active {
+        color: @wm-rating-hover-text-color;
+      }
+    }
+  }
+
+  /***fileuploader widget styling*******************/
   .app-fileupload .app-multi-file-upload, .app-fileupload .app-single-file-upload {
     height: auto;
     min-height: 3em;
@@ -807,32 +820,8 @@
       font-size: 1.2em;
     }
   }
-/**** Applictaion-specific stylings****/
-  .app-tile {
-    background-color: @wm-tile-bg;
-    border-top: 3px solid @wm-tile-border-color;
-    border-radius: 0;
-    &.bg-danger, &.bg-success, &.bg-info, &.bg-warning {
-      color: @panel-primary-text;
-    }
-    &.bg-primary {
-      background-color: @brand-primary;
-    }
-    &.bg-danger {
-      background-color: @brand-danger;
-    }
-    &.bg-success {
-      background-color: @brand-success;
-    }
-    &.bg-info {
-      background-color: @brand-info;
-    }
-    &.bg-warning {
-      background-color: @brand-warning;
-    }
-  }
 
- /***Slider widget styling*******************/
+  /***Slider widget styling*******************/
   input[type='range'] {
      color: @brand-primary;
   }
