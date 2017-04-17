@@ -64,9 +64,74 @@
     "isList" : false,
     "saveInPhonegap" : false
   },
+  "product_for_exceptions_by_product_and_store" : {
+    "_id" : "wm-product_for_exceptions_by_product_and_store-wm.Variable-1492456595002",
+    "name" : "product_for_exceptions_by_product_and_store",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "product_for_product_and_store" : {
+    "_id" : "wm-product_for_product_and_store-wm.Variable-1492456522003",
+    "name" : "product_for_product_and_store",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
   "store" : {
     "_id" : "wm-store-wm.Variable-1492225952690",
     "name" : "store",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "store_for_exceptions_by_product_and_store" : {
+    "_id" : "wm-store_for_exceptions_by_product_and_store-wm.Variable-1492456578690",
+    "name" : "store_for_exceptions_by_product_and_store",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "store_for_exceptions_by_store" : {
+    "_id" : "wm-store_for_exceptions_by_store-wm.Variable-1492456866819",
+    "name" : "store_for_exceptions_by_store",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
+  "store_for_product_and_store" : {
+    "_id" : "wm-store_for_product_and_store-wm.Variable-1492456535029",
+    "name" : "store_for_product_and_store",
     "owner" : "Page",
     "category" : "wm.Variable",
     "dataBinding" : [ ],
@@ -104,6 +169,78 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "onResult" : "svcOrderDetailonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svcOrderExceptionsByProductAndStore" : {
+    "_id" : "wm-svcOrderExceptionsByProductAndStore-wm.ServiceVariable-1492456994709",
+    "name" : "svcOrderExceptionsByProductAndStore",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "product",
+      "value" : "bind:Variables.product_for_exceptions_by_product_and_store.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "store",
+      "value" : "bind:Variables.store_for_exceptions_by_product_and_store.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcGetOrderExceptionsByProductAndStore.RootResponse",
+    "service" : "svcGetOrderExceptionsByProductAndStore",
+    "operation" : "invoke",
+    "operationId" : "svcGetOrderExceptionsByProductAndStore_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "svcOrderExceptionsByProductAndStoreonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svcOrderExceptionsByStore" : {
+    "_id" : "wm-svcOrderExceptionsByStore-wm.ServiceVariable-1492456845217",
+    "name" : "svcOrderExceptionsByStore",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "store",
+      "value" : "bind:Variables.store_for_exceptions_by_store.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrderExceptionsByStore.RootResponse",
+    "service" : "svcOrderExceptionsByStore",
+    "operation" : "invoke",
+    "operationId" : "svcOrderExceptionsByStore_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "svcOrderExceptionsByStoreonResult($event, $scope)",
     "startUpdate" : false,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",
@@ -173,6 +310,44 @@
     "designMaxResults" : 10,
     "onResult" : "svcOrdersByProductonResult($event, $scope)",
     "onSuccess" : "svcOrdersByProductonSuccess($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svcOrdersByProductAndStore" : {
+    "_id" : "wm-svcOrdersByProductAndStore-wm.ServiceVariable-1492456748567",
+    "name" : "svcOrdersByProductAndStore",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "product",
+      "value" : "bind:Variables.product_for_product_and_store.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "store",
+      "value" : "bind:Variables.store_for_product_and_store.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrdersByProductAndStore.RootResponse",
+    "service" : "svcOrdersByProductAndStore",
+    "operation" : "invoke",
+    "operationId" : "svcOrdersByProductAndStore_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onResult" : "svcOrdersByProductAndStoreonResult($event, $scope)",
     "startUpdate" : false,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",

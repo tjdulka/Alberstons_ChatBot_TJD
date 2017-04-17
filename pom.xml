@@ -20,7 +20,21 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/svcGetOrderExceptionsByProductAndStore/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/svcOrderDetail/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/svcOrderExceptionsByStore/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -42,6 +56,13 @@
             <resource>
                 <filtering>true</filtering>
                 <directory>services/svcOrdersByProduct/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
+                <directory>services/svcOrdersByProductAndStore/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
@@ -140,10 +161,13 @@
                             <sources>
                             
                                 <source>services/securityService/src</source>
+                                <source>services/svcGetOrderExceptionsByProductAndStore/src</source>
                                 <source>services/svcOrderDetail/src</source>
+                                <source>services/svcOrderExceptionsByStore/src</source>
                                 <source>services/svcOrderStatus/src</source>
                                 <source>services/svcOrders/src</source>
                                 <source>services/svcOrdersByProduct/src</source>
+                                <source>services/svcOrdersByProductAndStore/src</source>
                                 <source>services/svcOrdersByStore/src</source>
                                 <source>services/svcOrdersByUser/src</source>
                             </sources>

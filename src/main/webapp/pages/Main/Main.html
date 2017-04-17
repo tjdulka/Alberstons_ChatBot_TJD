@@ -7,6 +7,68 @@
                     <wm-gridcolumn columnwidth="4" name="gridcolumn1">
                         <wm-prefab prefabname="watsonChatbot" name="askWatson" height="600" on-watsonresponse="askWatsonWatsonresponse($scope)"></wm-prefab>
                         <wm-html name="html1" height="600" content="bind:Variables.htmlContent.dataSet.dataValue" show="false">bind:Variables.htmlContent.dataSet.dataValue</wm-html>
+                        <wm-container name="TestValuesContainer">
+                            <wm-composite name="composite8">
+                                <wm-label class="col-md-3 control-label" name="label28" caption="Product (Orders)"></wm-label>
+                                <wm-container class="col-md-9" name="container20">
+                                    <wm-text name="text8" on-change="text8Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite9">
+                                <wm-label class="col-md-3 control-label" name="label29" caption="Store (Orders)"></wm-label>
+                                <wm-container class="col-md-9" name="container21">
+                                    <wm-text name="text9" on-change="text9Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite10">
+                                <wm-label class="col-md-3 control-label" name="label30" caption="User (Orders)"></wm-label>
+                                <wm-container class="col-md-9" name="container22">
+                                    <wm-text name="text10" on-change="text10Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite11">
+                                <wm-label class="col-md-3 control-label" name="label31" caption="Product (Orders by Prod and Store)"></wm-label>
+                                <wm-container class="col-md-9" name="container23">
+                                    <wm-text name="text11" on-change="text11Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite13">
+                                <wm-label class="col-md-3 control-label" name="label33" caption="Store (Orders by Prod and Store)"></wm-label>
+                                <wm-container class="col-md-9" name="container25">
+                                    <wm-text name="text13" on-change="text13Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite14">
+                                <wm-label class="col-md-3 control-label" name="label34" caption="Order (Detail)"></wm-label>
+                                <wm-container class="col-md-9" name="container26">
+                                    <wm-text name="text14" on-change="text14Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite15">
+                                <wm-label class="col-md-3 control-label" name="label35" caption="Order (Status)"></wm-label>
+                                <wm-container class="col-md-9" name="container27">
+                                    <wm-text name="text15" on-change="text15Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite16">
+                                <wm-label class="col-md-3 control-label" name="label36" caption="Store (Ord Ex By Store)"></wm-label>
+                                <wm-container class="col-md-9" name="container28">
+                                    <wm-text name="text16" on-change="text16Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite17">
+                                <wm-label class="col-md-3 control-label" name="label37" caption="Product (Ord Ex by Prod and Store)"></wm-label>
+                                <wm-container class="col-md-9" name="container29">
+                                    <wm-text name="text17" on-change="text17Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                            <wm-composite name="composite18">
+                                <wm-label class="col-md-3 control-label" name="label38" caption="Store (Ord Ex by Prod and Store)"></wm-label>
+                                <wm-container class="col-md-9" name="container30">
+                                    <wm-text name="text18" on-change="text18Change($event, $scope, newVal, oldVal)"></wm-text>
+                                </wm-container>
+                            </wm-composite>
+                        </wm-container>
                     </wm-gridcolumn>
                     <wm-gridcolumn columnwidth="8" name="gridcolumn2">
                         <wm-container name="OrderStatusContainer">
@@ -62,9 +124,43 @@
                             </wm-grid>
                         </wm-container>
                         <wm-container name="OrdersByUserContainer">
-                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label9"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="User:" fontweight="bold" name="label9"></wm-label>
                             <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByUser.dataSet.results.DW_CREATE_USER_ID" name="label10"></wm-label>
                             <wm-grid title="" dataset="bind:Variables.svcOrdersByUser.dataSet.results.ORDERS" navigation="Pager" name="grid6" pagesize="10">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Dest Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OrdersByProductAndStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label11"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProductAndStore.dataSet.results.STORE" name="label12"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="Product:" fontweight="bold" name="label17_1"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProductAndStore.dataSet.results.PRODUCT" name="label18_1"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrdersByProductAndStore.dataSet.results.ORDERS" navigation="Pager" pagesize="10" name="grid7">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Dest Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OEByStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label13"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderExceptionsByStore.dataSet.results.STORE" name="label14"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrderExceptionsByStore.dataSet.results.ORDER_EXCEPTIONS" navigation="Pager" pagesize="10" name="grid8">
+                                <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Dest Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                            </wm-grid>
+                        </wm-container>
+                        <wm-container name="OEByProductAndStoreContainer">
+                            <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label15"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderExceptionsByProductAndStore.dataSet.results.STORE" name="label16"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="Product:" fontweight="bold" name="label19_1"></wm-label>
+                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderExceptionsByProductAndStore.dataSet.results.PRODUCT" name="label20_1"></wm-label>
+                            <wm-grid title="" dataset="bind:Variables.svcOrderExceptionsByProductAndStore.dataSet.results.ORDER_EXCEPTIONS" navigation="Pager" pagesize="10" name="grid9">
                                 <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
@@ -75,6 +171,7 @@
                 </wm-gridrow>
             </wm-layoutgrid>
         </wm-page-content>
+        <wm-container name="container8"></wm-container>
     </wm-content>
     <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
