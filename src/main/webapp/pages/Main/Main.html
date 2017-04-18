@@ -106,8 +106,8 @@
                                 <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProduct.dataSet.results.PRODUCT" name="label6"></wm-label>
                                 <wm-grid title="" dataset="bind:Variables.svcOrdersByProduct.dataSet.results.ORDERS" navigation="Pager" name="grid4_1" pagesize="10">
                                     <wm-grid-column binding="ORDER_NBR" caption="Order Nbr" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                    <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                     <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                     <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                     <wm-grid-column binding="SHIP_QTY" caption="Order Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                     <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
@@ -140,9 +140,12 @@
                             <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByProductAndStore.dataSet.results.PRODUCT" name="label18_1"></wm-label>
                             <wm-grid title="" dataset="bind:Variables.svcOrdersByProductAndStore.dataSet.results.ORDERS" navigation="Pager" pagesize="10" name="grid7">
                                 <wm-grid-column binding="ORDER_NBR" caption="Order Number" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" show="true" readonly="undefined"></wm-grid-column>
+                                <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SHIP_QTY" caption="Ship Qty" show="true" readonly="undefined"></wm-grid-column>
+                                <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SHIP_FACILITY_ID" caption="Ship Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                <wm-grid-column binding="DEST_FACILITY_ID" caption="Dest Facility Id" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                             </wm-grid>
                         </wm-container>
                         <wm-container name="OEByStoreContainer">
