@@ -72,7 +72,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                 $scope.Variables.store_for_product_and_store.dataSet = {
                     "dataValue": input.text
                 };
-
             }
         }
     };
@@ -91,7 +90,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         };
     };
 
-
     $scope.svcOrderStatusonResult = function(variable, data) {
         if (data.results.ORDER_NBR != '') {
             $scope.Widgets.OrdersContainer.show = false;
@@ -108,7 +106,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     };
 
-
     $scope.svcOrderDetailonResult = function(variable, data) {
         if (data.results.ORDER_NBR != '') {
             $scope.Widgets.OrdersContainer.show = false;
@@ -122,7 +119,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Widgets.OEByProductAndStoreContainer.show = false;
         };
     };
-
 
     $scope.svcOrdersonResult = function(variable, data) {
         if ($scope.Variables.forceOrdersInvoke.dataSet.dataValue > 0) {
@@ -152,7 +148,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         };
     };
 
-
     $scope.svcOrdersByStoreonResult = function(variable, data) {
         if (data.results.DEST_FACILITY_ID != '') {
             $scope.Widgets.OrdersContainer.show = false;
@@ -167,7 +162,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         };
     };
 
-
     $scope.svcOrdersByProductAndStoreonResult = function(variable, data) {
         $scope.Widgets.OrdersContainer.show = false;
         $scope.Widgets.OrderStatusContainer.show = false;
@@ -179,7 +173,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         $scope.Widgets.OEByStoreContainer.show = false;
         $scope.Widgets.OEByProductAndStoreContainer.show = false;
     };
-
 
     $scope.svcOrderExceptionsByStoreonResult = function(variable, data) {
         $scope.Widgets.OrdersContainer.show = false;
@@ -193,7 +186,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         $scope.Widgets.OEByProductAndStoreContainer.show = false;
     };
 
-
     $scope.svcOrderExceptionsByProductAndStoreonResult = function(variable, data) {
         $scope.Widgets.OrdersContainer.show = false;
         $scope.Widgets.OrderStatusContainer.show = false;
@@ -205,10 +197,6 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         $scope.Widgets.OEByStoreContainer.show = false;
         $scope.Widgets.OEByProductAndStoreContainer.show = true;
     };
-
-
-
-
 }]);
 
 Application.$controller("grid1Controller", ["$scope",
@@ -218,10 +206,6 @@ Application.$controller("grid1Controller", ["$scope",
 
         $scope.ORDER_NBROnClick = function($event, $isolateScope, rowData) {
             console.log('The row data with index: ', rowData);
-            /*
-            $scope.Widgets.askWatson.send('50150300'); 
-            $scope.Widgets.askWatson.enablechat();
-            */
         };
 
     }
