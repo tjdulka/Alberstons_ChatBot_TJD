@@ -3,7 +3,7 @@
     <bean class="com.wavemaker.runtime.security.SecurityService" id="securityService"/>
     <bean class="com.wavemaker.runtime.security.controller.SecurityController" id="securityController"/>
     <bean class="com.wavemaker.runtime.web.filter.SSLSecureFilter" id="sslSecureFilter"/>
-    <bean class="com.wavemaker.runtime.security.xss.filter.WMXSSFilter" id="xssFilter"/>
+    <bean class="com.wavemaker.runtime.security.xss.filter.WMXSSFilter" id="wmXSSFilter"/>
     <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
@@ -24,6 +24,7 @@
         <property name="rememberMeConfig" ref="rememberMeConfig"/>
         <property name="csrfConfig" ref="csrfConfig"/>
         <property name="rolesConfig" ref="rolesConfig"/>
+        <property name="tokenAuthConfig" ref="tokenAuthConfig"/>
     </bean>
     <bean class="com.wavemaker.commons.model.security.SSLConfig" id="sslConfig">
         <property name="useSSL" value="${general.ssl.enabled}"/>
@@ -62,9 +63,7 @@
         <security:intercept-url pattern="/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/" access="isAuthenticated()"/>
         <security:intercept-url pattern="/**" access="isAuthenticated()"/>
-        <security:headers defaults-disabled="true">
-            <security:frame-options policy="SAMEORIGIN"/>
-        </security:headers>
+        <security:headers disabled="true"/>
         <security:request-cache ref="nullRequestCache"/>
         <security:custom-filter before="PRE_AUTH_FILTER" ref="wmTokenBasedPreAuthenticatedProcessingFilter"/>
         <security:custom-filter position="REMEMBER_ME_FILTER" ref="rememberMeAuthFilter"/>
@@ -124,9 +123,7 @@
         <constructor-arg ref="authenticationManager"/>
         <constructor-arg ref="wmTokenBasedAuthenticationService"/>
     </bean>
-    <bean class="com.wavemaker.runtime.security.token.WMTokenBasedAuthenticationService" id="wmTokenBasedAuthenticationService">
-        <constructor-arg value="1800"/>
-    </bean>
+    <bean class="com.wavemaker.runtime.security.token.WMTokenBasedAuthenticationService" id="wmTokenBasedAuthenticationService"/>
     <bean class="com.wavemaker.runtime.security.WMAuthenticationSuccessHandler" id="successHandler"/>
     <bean class="com.wavemaker.runtime.security.WMAuthenticationFailureHandler" id="failureHandler"/>
     <bean class="com.wavemaker.runtime.security.rememberme.WMAppRememberMeServices" id="rememberMeServices">
@@ -237,5 +234,17 @@
                 </bean>
             </list>
         </property>
+    </bean>
+    <bean class="com.wavemaker.commons.model.security.TokenAuthConfig" id="tokenAuthConfig">
+        <property name="enabled" value="${general.tokenService.enabled}"/>
+        <property name="parameter" value="${general.tokenService.parameter}"/>
+        <property name="tokenValiditySeconds" value="${general.tokenService.tokenValiditySeconds}"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.security.filter.WMXFrameOptionsHeaderFilter" id="wmXFrameOptionsFilter"/>
+    <bean class="com.wavemaker.runtime.security.filter.WMXContentTypeOptionsFilter" id="wmXContentTypeOptionsFilter"/>
+    <bean class="org.springframework.security.web.FilterChainProxy" id="wmCompositeSecurityFilter">
+        <constructor-arg>
+            <security:filter-chain pattern="/**" filters="sslSecureFilter, wmXSSFilter, wmXFrameOptionsFilter, wmXContentTypeOptionsFilter"/>
+        </constructor-arg>
     </bean>
 </beans>

@@ -102,31 +102,29 @@
                                         <versionRange>[1.7,)</versionRange>
                                         <goals>
                                             <goal>run</goal>
-                                        </goals>
-                                    </pluginExecutionFilter>
+                    </goals>
+                  </pluginExecutionFilter>
                                     <action>
                                         <ignore/>
-                                    </action>
-                                </pluginExecution>
-                            </pluginExecutions>
-                        </lifecycleMappingMetadata>
+                  </action>
+                </pluginExecution>
+              </pluginExecutions>
+            </lifecycleMappingMetadata>
                     </configuration>
                 </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
                 <version>3.0.1</version>
                 <configuration>
                     <nonFilteredFileExtensions>
                         <nonFilteredFileExtension>jks</nonFilteredFileExtension>
-                    </nonFilteredFileExtensions>
+          </nonFilteredFileExtensions>
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-clean-plugin</artifactId>
                 <version>2.4.1</version>
                 <executions>
@@ -139,11 +137,11 @@
                     <filesets>
                         <fileset>
                             <directory>${basedir}/src/main/webapp/WEB-INF/lib</directory>
-                        </fileset>
+            </fileset>
                         <fileset>
                             <directory>${basedir}/src/main/webapp/WEB-INF/classes</directory>
-                        </fileset>
-                    </filesets>
+            </fileset>
+          </filesets>
                 </configuration>
             </plugin>
             <plugin>
@@ -159,7 +157,6 @@
                         </goals>
                         <configuration>
                             <sources>
-                            
                                 <source>services/securityService/src</source>
                                 <source>services/svcGetOrderExceptionsByProductAndStore/src</source>
                                 <source>services/svcOrderDetail/src</source>
@@ -176,7 +173,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
                 <version>1.7</version>
                 <executions>
@@ -189,36 +185,12 @@
                         <configuration>
                             <target>
                                 <ant antfile="${basedir}/build.xml" target="init"/>
-                            </target>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>export-file-generator</id>
-                        <phase>install</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <defaultexcludes remove="**/.gitignore"/>
-                                <property name="zipdir" value="${basedir}"/>
-                                <property name="zipdestfile" value="target/export/${project.build.finalName}.zip"/>
-                                <echo>Creating ${zipdestfile} from ${zipdir}</echo>
-                                <zip destfile="${zipdestfile}" update="true">
-                                    <fileset dir="${zipdir}">
-                                        <exclude name="export/"/>
-                                        <exclude name="target/"/>
-                                        <exclude name="src/main/webapp/WEB-INF/lib/"/>
-                                        <exclude name="src/main/webapp/WEB-INF/classes/"/>
-                                    </fileset>
-                                </zip>
-                            </target>
+              </target>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
@@ -229,7 +201,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <version>2.10</version>
                 <executions>
@@ -248,8 +219,8 @@
                                     <version>${wavemaker.studio.version}</version>
                                     <classifier>wmapp</classifier>
                                     <type>zip</type>
-                                </artifactItem>
-                            </artifactItems>
+                </artifactItem>
+              </artifactItems>
                         </configuration>
                     </execution>
                 </executions>
@@ -264,6 +235,20 @@
                         <phase>prepare-package</phase>
                         <goals>
                             <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.wavemaker.app.build</groupId>
+                <artifactId>wavemaker-app-package-maven-plugin</artifactId>
+                <version>${wavemaker.studio.version}</version>
+                <executions>
+                    <execution>
+                        <id>package app sources</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>package-app</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -310,7 +295,6 @@
             <id>central</id>
             <name>Maven Repository Switchboard</name>
             <url>http://repo1.maven.org/maven2</url>
-            <layout>default</layout>
         </repository>
         <repository>
             <releases>
@@ -373,9 +357,9 @@
         </dependencies>
     </dependencyManagement>
     <properties>
-        <profile.props.file>development.properties</profile.props.file>
         <spring.version>4.2.0.RELEASE</spring.version>
+        <profile.props.file>development.properties</profile.props.file>
         <spring.security.version>4.1.2.RELEASE</spring.security.version>
-        <wavemaker.studio.version>8.4.1.1</wavemaker.studio.version>
+        <wavemaker.studio.version>8.4.2</wavemaker.studio.version>
     </properties>
 </project>

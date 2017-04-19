@@ -16,72 +16,63 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     $scope.askWatsonWatsonresponse = function($isolateScope) {
         var data = $isolateScope.watsonresponse;
-
         var output_text = _.get(data, 'output.text');
+
         if (typeof output_text != 'undefined') {
-            if (output_text[0].startsWith('(--OMS_GET_ORDERS_BY_PRODUCT--)')) {
-                var entities = _.get(data, 'entities');
-                entities.forEach(function(entity, index) {
-                    if (entity.entity == 'Products') {
-                        output_text[0] = 'I will find you the orders with ' + entity.value;
-                        $scope.Variables.htmlContent.dataSet = {
-                            "dataValue": ''
-                        };
-                        $scope.Variables.product.dataSet = {
-                            "dataValue": entity.value
-                        };
-                    }
-                });
-            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_STORE--)')) {
+            console.log('output.text = ', output_text[0]);
+            if (output_text[0].startsWith('(--OMS_GET_ORDERS_BY_STORE--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find you a list of orders by store number ' + input.text;
-                $scope.Variables.htmlContent.dataSet = {
-                    "dataValue": ''
-                };
                 $scope.Variables.store.dataSet = {
                     "dataValue": input.text
                 };
             } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_USER--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find a list of orders by user ' + input.text;
-                $scope.Variables.htmlContent.dataSet = {
-                    "dataValue": ''
-                };
                 $scope.Variables.user.dataSet = {
                     "dataValue": input.text
                 };
             } else if (output_text[0].startsWith('(--OMS_GET_ORDER_STATUS--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find you the status of order number ' + input.text;
-                $scope.Variables.htmlContent.dataSet = {
-                    "dataValue": ''
-                };
                 $scope.Variables.order_for_status.dataSet = {
                     "dataValue": input.text
                 };
             } else if (output_text[0].startsWith('(--OMS_GET_ORDER_DETAIL--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find you the line items from order number ' + input.text;
-                $scope.Variables.htmlContent.dataSet = {
-                    "dataValue": ''
-                };
                 $scope.Variables.order_for_detail.dataSet = {
                     "dataValue": input.text
                 };
-            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_ALL--)')) {
+            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS--)')) {
                 output_text[0] = 'Here is a list of all recent orders'
-                $scope.Variables.htmlContent.dataSet = {
-                    "dataValue": ''
-                };
                 var counter = $scope.Variables.forceOrdersInvoke.dataSet.dataValue;
                 counter += 1;
                 $scope.Variables.forceOrdersInvoke.dataSet = {
                     "dataValue": counter
                 };
-            } else {
-                $scope.Variables.htmlContent.dataSet = {
-                    "dataValue": ''
+            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_BY_PRODUCT--)')) {
+                var context = _.get(data, 'context');
+
+                console.log('context: ', context.product);
+                output_text[0] = 'I will find you the orders with ' + context.product;
+                $scope.Variables.product.dataSet = {
+                    "dataValue": context.product
+                }
+            } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_BY_PRODUCT_AND_STORE--)')) {
+                var input = _.get(data, 'input');
+                var context = _.get(data, 'context');
+
+                console.log('input: ', input);
+                console.log('context: ', context.product);
+                output_text[0] = 'I will find you the orders with ' + context.product + ' for store number ' + input.text;
+                $scope.Variables.product_for_product_and_store.dataSet = {
+                    "dataValue": context.product
                 };
+                $scope.Variables.store_for_product_and_store.dataSet = {
+                    "dataValue": input.text
+                };
+
             }
         }
     };
