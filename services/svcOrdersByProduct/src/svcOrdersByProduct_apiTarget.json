@@ -73,6 +73,10 @@
       "x-WM-FULLY_QUALIFIED_NAME" : "svcOrdersByProduct.ORDERSEntryItem",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ],
       "properties" : {
+        "SHIP_FACILITY_ID" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
         "SCHEDULE_DELIVERY_DT" : {
           "type" : "string"
         },
@@ -92,6 +96,10 @@
           "type" : "integer"
         },
         "MODIFY_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "DEST_FACILITY_ID" : {
           "format" : "int32",
           "type" : "integer"
         },
@@ -116,7 +124,7 @@
           "type" : "integer"
         }
       },
-      "required" : [ "COM_DEMAND_QTY", "COM_MODIFY_QTY", "COM_ORDER_QTY", "EXE_DEMAND_QTY", "EXE_SHIP_QTY", "ITEM_DSC", "MODIFY_QTY", "ORDER_NBR", "ORDER_QTY", "SCHEDULE_DELIVERY_DT", "SHIP_QTY" ]
+      "required" : [ "COM_DEMAND_QTY", "COM_MODIFY_QTY", "COM_ORDER_QTY", "DEST_FACILITY_ID", "EXE_DEMAND_QTY", "EXE_SHIP_QTY", "ITEM_DSC", "MODIFY_QTY", "ORDER_NBR", "ORDER_QTY", "SCHEDULE_DELIVERY_DT", "SHIP_FACILITY_ID", "SHIP_QTY" ]
     }
   },
   "securityDefinitions" : {
@@ -126,7 +134,7 @@
   },
   "info" : {
     "x-WM-SERVICE_TYPE" : "RestService",
-    "x-WM-API_ID" : "010576aa-c853-4a6c-bb2d-81771071837e",
+    "x-WM-API_ID" : "4c890fb4-62c2-4a65-a0d3-7fe633a1fd0e",
     "x-WM-USE_PROXY_FOR_WEB" : true,
     "x-WM-SERVICE_ID" : "mybluemix",
     "x-WM-USE_PROXY_FOR_MOBILE" : true,

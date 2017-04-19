@@ -216,150 +216,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     };
 
 
-    $scope.text8Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.product.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = true;
-        $scope.Widgets.OrdersByStoreContainer.show = false;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-    };
 
-
-    $scope.text9Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.store.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = true;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-    };
-
-
-    $scope.text10Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.user.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = true;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-    };
-
-
-    $scope.text11Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.product_for_product_and_store.dataSet = {
-            "dataValue": newVal
-        };
-    };
-
-
-    $scope.text13Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.store_for_product_and_store.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = false;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = true;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-
-    };
-
-
-    $scope.text14Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.order_for_detail.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = true;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = false;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-
-    };
-
-
-    $scope.text15Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.order_for_status.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = true;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = false;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-
-    };
-
-
-    $scope.text16Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.store_for_exceptions_by_store.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = false;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = true;
-        $scope.Widgets.OEByProductAndStoreContainer.show = false;
-
-    };
-
-
-    $scope.text17Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.product_for_exceptions_by_product_and_store.dataSet = {
-            "dataValue": newVal
-        };
-    };
-
-
-    $scope.text18Change = function($event, $isolateScope, newVal, oldVal) {
-        $scope.Variables.store_for_exceptions_by_product_and_store.dataSet = {
-            "dataValue": newVal
-        };
-        $scope.Widgets.OrdersContainer.show = false;
-        $scope.Widgets.OrderStatusContainer.show = false;
-        $scope.Widgets.OrderDetailContainer.show = false;
-        $scope.Widgets.OrdersByProductContainer.show = false;
-        $scope.Widgets.OrdersByStoreContainer.show = false;
-        $scope.Widgets.OrdersByUserContainer.show = false;
-        $scope.Widgets.OrdersByProductAndStoreContainer.show = false;
-        $scope.Widgets.OEByStoreContainer.show = false;
-        $scope.Widgets.OEByProductAndStoreContainer.show = true;
-    };
 
 }]);
 
@@ -367,6 +224,15 @@ Application.$controller("grid1Controller", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
+
+        $scope.ORDER_NBROnClick = function($event, $isolateScope, rowData) {
+            console.log('The row data with index: ', rowData);
+            /*
+            $scope.Widgets.askWatson.send('50150300'); 
+            $scope.Widgets.askWatson.enablechat();
+            */
+        };
+
     }
 ]);
 
