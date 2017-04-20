@@ -58,7 +58,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                 output_text[0] = 'I will find you the orders with ' + context.product;
                 $scope.Variables.product.dataSet = {
                     "dataValue": context.product
-                }
+                };
             } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_BY_PRODUCT_AND_STORE--)')) {
                 var input = _.get(data, 'input');
                 var context = _.get(data, 'context');
@@ -72,8 +72,38 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                 $scope.Variables.store_for_product_and_store.dataSet = {
                     "dataValue": input.text
                 };
-            }
-        }
+            } else if (output_text[0].startsWith('(--OMS_GET_EXCEPTIONS_BY_STORE--)')) {
+                var input = _.get(data, 'input');
+                var context = _.get(data, 'context');
+
+                output_text[0] = 'I will find you the order exceptions for store number ' + context.store;
+                $scope.Variables.store_for_exceptions_by_store.dataSet = {
+                    "dataValue": context.store
+                };
+
+            } else if (output_text[0].startsWith('(--OMS_GET_EXCEPTIONS_BY_PRODUCT_AND_STORE--)')) {
+                var input = _.get(data, 'input');
+                var context = _.get(data, 'context');
+                var entities = _.get(data, 'entities');
+                var entity_value;
+
+                entities.forEach(function(entity, index) {
+                    if (entity.entity == 'Products') {
+                        entity_value = entity.value;
+                    }
+                });
+                console.log('input: ', input);
+                console.log('context: ', context.store);
+                output_text[0] = 'I will find you the order exceptions for ' + entity_value + ' for store number ' + context.store;
+                $scope.Variables.product_for_exceptions_by_product_and_store.dataSet = {
+                    "dataValue": entity_value
+                };
+                $scope.Variables.store_for_exceptions_by_product_and_store.dataSet = {
+                    "dataValue": context.store
+                };
+
+            };
+        };
     };
 
     $scope.svcOrdersByProductonResult = function(variable, data) {
