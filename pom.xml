@@ -41,6 +41,13 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/svcOrderLocation/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/svcOrderStatus/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -157,10 +164,12 @@
                         </goals>
                         <configuration>
                             <sources>
+                            
                                 <source>services/securityService/src</source>
                                 <source>services/svcGetOrderExceptionsByProductAndStore/src</source>
                                 <source>services/svcOrderDetail/src</source>
                                 <source>services/svcOrderExceptionsByStore/src</source>
+                                <source>services/svcOrderLocation/src</source>
                                 <source>services/svcOrderStatus/src</source>
                                 <source>services/svcOrders/src</source>
                                 <source>services/svcOrdersByProduct/src</source>

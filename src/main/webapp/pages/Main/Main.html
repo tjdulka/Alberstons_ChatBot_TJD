@@ -20,6 +20,14 @@
                                 <wm-grid-column binding="DW_CREATE_USER_ID" caption="User" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                             </wm-grid>
                         </wm-container>
+                        <wm-container name="OrderLocationContainer">
+                            <wm-grid title="" dataset="bind:Variables.svcOrderLocation.dataSet.results.ORDER_STATUS" navigation="None" name="grid11">
+                                <wm-grid-column binding="TRUCK_ID" caption="Truck Number" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_TIME" caption="Scheduled Delivery Time" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                <wm-grid-column binding="DELIVERY_TIME" caption="Delivery Time" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                            </wm-grid>
+                            <wm-prefab prefabname="googlemaps" name="googlemaps1" locations="bind:Variables.svcOrderLocation.dataSet.results.ORDER_STATUS" lat="TRUCK_LOCATION_LAT" lng="TRUCK_LOCATION_LNG" info="TRUCK_ID" icon="DELIVERY_TIME" zoom="10"></wm-prefab>
+                        </wm-container>
                         <wm-container name="OrdersContainer">
                             <wm-grid title="" dataset="bind:Variables.svcOrders.dataSet.results.ORDERS" navigation="Pager" name="grid1" pagesize="10">
                                 <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false" on-click="ORDER_NBROnClick($event, $scope, rowData)"></wm-grid-column>

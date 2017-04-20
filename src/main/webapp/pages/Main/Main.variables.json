@@ -38,6 +38,19 @@
     "isList" : false,
     "saveInPhonegap" : false
   },
+  "order_for_location" : {
+    "_id" : "wm-order_for_location-wm.Variable-1492718151599",
+    "name" : "order_for_location",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
   "order_for_status" : {
     "_id" : "wm-order_for_status-wm.Variable-1492209667236",
     "name" : "order_for_status",
@@ -241,6 +254,39 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "onResult" : "svcOrderExceptionsByStoreonResult($event, $scope)",
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "svcOrderLocation" : {
+    "_id" : "wm-svcOrderLocation-wm.ServiceVariable-1492718215433",
+    "name" : "svcOrderLocation",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "order",
+      "value" : "bind:Variables.order_for_location.dataSet.dataValue",
+      "type" : "string"
+    }, {
+      "target" : "wm_auth_username",
+      "value" : "bind:Variables.OmsUsername.dataSet.dataValue"
+    }, {
+      "target" : "wm_auth_password",
+      "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
+    } ],
+    "type" : "svcOrderLocation.RootResponse",
+    "service" : "svcOrderLocation",
+    "operation" : "invoke",
+    "operationId" : "svcOrderLocation_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "onResult" : "svcOrderLocationonResult($event, $scope)",
     "startUpdate" : false,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",

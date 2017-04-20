@@ -5,6 +5,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     $scope.onPageReady = function() {
         $scope.Widgets.OrdersContainer.show = false;
         $scope.Widgets.OrderStatusContainer.show = false;
+        $scope.Widgets.OrderLocationContainer.show = false;
         $scope.Widgets.OrderDetailContainer.show = false;
         $scope.Widgets.OrdersByProductContainer.show = false;
         $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -38,6 +39,10 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                 $scope.Variables.order_for_status.dataSet = {
                     "dataValue": input.text
                 };
+                $scope.Variables.order_for_location.dataSet = {
+                    "dataValue": input.text
+                };
+
             } else if (output_text[0].startsWith('(--OMS_GET_ORDER_DETAIL--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find you the line items from order number ' + input.text;
@@ -110,6 +115,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         if (data.results.PRODUCT != '') {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderLocationContainer.show = false;
             $scope.Widgets.OrderDetailContainer.show = false;
             $scope.Widgets.OrdersByProductContainer.show = true;
             $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -124,6 +130,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         if (data.results.ORDER_NBR != '') {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = true;
+            $scope.Widgets.OrderLocationContainer.show = true;
             $scope.Widgets.OrderDetailContainer.show = false;
             $scope.Widgets.OrdersByProductContainer.show = false;
             $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -140,6 +147,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         if (data.results.ORDER_NBR != '') {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderLocationContainer.show = false;
             $scope.Widgets.OrderDetailContainer.show = true;
             $scope.Widgets.OrdersByProductContainer.show = false;
             $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -154,6 +162,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         if ($scope.Variables.forceOrdersInvoke.dataSet.dataValue > 0) {
             $scope.Widgets.OrdersContainer.show = true;
             $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderLocationContainer.show = false;
             $scope.Widgets.OrderDetailContainer.show = false;
             $scope.Widgets.OrdersByProductContainer.show = false;
             $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -168,6 +177,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         if (data.results.DW_CREATE_USER_ID != '') {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderLocationContainer.show = false;
             $scope.Widgets.OrderDetailContainer.show = false;
             $scope.Widgets.OrdersByProductContainer.show = false;
             $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -182,6 +192,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         if (data.results.DEST_FACILITY_ID != '') {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = false;
+            $scope.Widgets.OrderLocationContainer.show = false;
             $scope.Widgets.OrderDetailContainer.show = false;
             $scope.Widgets.OrdersByProductContainer.show = false;
             $scope.Widgets.OrdersByStoreContainer.show = true;
@@ -195,6 +206,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     $scope.svcOrdersByProductAndStoreonResult = function(variable, data) {
         $scope.Widgets.OrdersContainer.show = false;
         $scope.Widgets.OrderStatusContainer.show = false;
+        $scope.Widgets.OrderLocationContainer.show = false;
         $scope.Widgets.OrderDetailContainer.show = false;
         $scope.Widgets.OrdersByProductContainer.show = false;
         $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -207,6 +219,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     $scope.svcOrderExceptionsByStoreonResult = function(variable, data) {
         $scope.Widgets.OrdersContainer.show = false;
         $scope.Widgets.OrderStatusContainer.show = false;
+        $scope.Widgets.OrderLocationContainer.show = false;
         $scope.Widgets.OrderDetailContainer.show = false;
         $scope.Widgets.OrdersByProductContainer.show = false;
         $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -219,6 +232,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     $scope.svcOrderExceptionsByProductAndStoreonResult = function(variable, data) {
         $scope.Widgets.OrdersContainer.show = false;
         $scope.Widgets.OrderStatusContainer.show = false;
+        $scope.Widgets.OrderLocationContainer.show = false;
         $scope.Widgets.OrderDetailContainer.show = false;
         $scope.Widgets.OrdersByProductContainer.show = false;
         $scope.Widgets.OrdersByStoreContainer.show = false;
@@ -227,6 +241,11 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         $scope.Widgets.OEByStoreContainer.show = false;
         $scope.Widgets.OEByProductAndStoreContainer.show = true;
     };
+
+    $scope.svcOrderLocationonResult = function(variable, data) {
+
+    };
+
 }]);
 
 Application.$controller("grid1Controller", ["$scope",
@@ -295,4 +314,11 @@ Application.$controller("grid9Controller", ["$scope",
         "use strict";
         $scope.ctrlScope = $scope;
     }
+]);
+
+Application.$controller("grid11Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
 ]);
