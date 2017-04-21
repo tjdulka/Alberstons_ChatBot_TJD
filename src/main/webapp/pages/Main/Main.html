@@ -12,7 +12,7 @@
                         <wm-container name="OrderStatusContainer">
                             <wm-label padding="unset 0.5em" name="label17" caption="Order Number:" fontweight="bold"></wm-label>
                             <wm-label padding="unset 0.5em" name="label18" caption="bind:Variables.svcOrderStatus.dataSet.results.ORDER_NBR"></wm-label>
-                            <wm-grid title="" dataset="bind:Variables.svcOrderStatus.dataSet.results.ORDER_STATUS" navigation="Pager" name="grid3" pagesize="10">
+                            <wm-grid title="" dataset="bind:Variables.svcOrderStatus.dataSet.results.ORDER_STATUS" navigation="None" name="grid3" pagesize="10">
                                 <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
