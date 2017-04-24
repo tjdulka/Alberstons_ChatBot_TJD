@@ -252,7 +252,7 @@ Application.$controller("grid1Controller", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
-
+        /* attempt to get a call back on a row click for order */
         $scope.ORDER_NBROnClick = function($event, $isolateScope, rowData) {
             console.log('The row data with index: ', rowData);
         };
@@ -317,8 +317,8 @@ Application.$controller("grid9Controller", ["$scope",
 ]);
 
 Application.$controller("grid11Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
 ]);
