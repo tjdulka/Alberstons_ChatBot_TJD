@@ -73,15 +73,33 @@
       "x-WM-FULLY_QUALIFIED_NAME" : "svcOrderExceptionsByStore.ORDER_EXCEPTIONSEntryItem",
       "x-WM-TAGS" : [ "RestServiceVirtualController" ],
       "properties" : {
+        "DISCREPENCY_REASON_DSC" : {
+          "type" : "string"
+        },
         "SCHEDULE_DELIVERY_DT" : {
           "type" : "string"
         },
-        "ITEM_DSC" : {
+        "DISCREPENCY_DISPLAY_DSC" : {
           "type" : "string"
         },
         "COM_MODIFY_QTY" : {
           "format" : "int32",
           "type" : "integer"
+        },
+        "MODIFY_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "COM_ORDER_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "EXE_SHIP_QTY" : {
+          "format" : "int32",
+          "type" : "integer"
+        },
+        "ITEM_DSC" : {
+          "type" : "string"
         },
         "ORDER_QTY" : {
           "format" : "int32",
@@ -91,16 +109,8 @@
           "format" : "int32",
           "type" : "integer"
         },
-        "MODIFY_QTY" : {
-          "format" : "int32",
-          "type" : "integer"
-        },
         "DISCREPENCY_DSC" : {
           "type" : "string"
-        },
-        "COM_ORDER_QTY" : {
-          "format" : "int32",
-          "type" : "integer"
         },
         "ORDER_NBR" : {
           "format" : "int32",
@@ -113,13 +123,9 @@
         "SHIP_QTY" : {
           "format" : "int32",
           "type" : "integer"
-        },
-        "EXE_SHIP_QTY" : {
-          "format" : "int32",
-          "type" : "integer"
         }
       },
-      "required" : [ "COM_DEMAND_QTY", "COM_MODIFY_QTY", "COM_ORDER_QTY", "DISCREPENCY_DSC", "EXE_DEMAND_QTY", "EXE_SHIP_QTY", "ITEM_DSC", "MODIFY_QTY", "ORDER_NBR", "ORDER_QTY", "SCHEDULE_DELIVERY_DT", "SHIP_QTY" ]
+      "required" : [ "COM_DEMAND_QTY", "COM_MODIFY_QTY", "COM_ORDER_QTY", "DISCREPENCY_DISPLAY_DSC", "DISCREPENCY_DSC", "DISCREPENCY_REASON_DSC", "EXE_DEMAND_QTY", "EXE_SHIP_QTY", "ITEM_DSC", "MODIFY_QTY", "ORDER_NBR", "ORDER_QTY", "SCHEDULE_DELIVERY_DT", "SHIP_QTY" ]
     }
   },
   "securityDefinitions" : {
@@ -129,7 +135,7 @@
   },
   "info" : {
     "x-WM-SERVICE_TYPE" : "RestService",
-    "x-WM-API_ID" : "00de6ab1-6fc7-4b6e-8c82-19cab3678c61",
+    "x-WM-API_ID" : "59e0f50d-d46b-42b2-8426-e1b450adf2f0",
     "x-WM-USE_PROXY_FOR_WEB" : true,
     "x-WM-SERVICE_ID" : "mybluemix",
     "x-WM-USE_PROXY_FOR_MOBILE" : true,
