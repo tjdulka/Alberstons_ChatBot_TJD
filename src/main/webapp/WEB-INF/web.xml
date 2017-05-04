@@ -196,6 +196,19 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <filter>
+        <filter-name>WMCompositeSecurityFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetBeanName</param-name>
+            <param-value>wmCompositeSecurityFilter</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>WMCompositeSecurityFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- security configuration -->
     <filter>
         <filter-name>springSecurityFilterChain</filter-name>
@@ -217,18 +230,6 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    <filter>
-        <filter-name>WMCompositeSecurityFilter</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-        <init-param>
-            <param-name>targetBeanName</param-name>
-            <param-value>wmCompositeSecurityFilter</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>WMCompositeSecurityFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
 
     <mime-mapping>
         <extension>woff2</extension>

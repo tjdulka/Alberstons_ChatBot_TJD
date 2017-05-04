@@ -19,8 +19,10 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
         var data = $isolateScope.watsonresponse;
         var output_text = _.get(data, 'output.text');
 
+        /* check for a message from chat */
         if (typeof output_text != 'undefined') {
             console.log('output.text = ', output_text[0]);
+            /* if order by store, show list of orders */
             if (output_text[0].startsWith('(--OMS_GET_ORDERS_BY_STORE--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find you a list of orders by store number ' + input.text;
