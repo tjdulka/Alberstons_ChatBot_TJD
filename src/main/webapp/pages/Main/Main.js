@@ -249,6 +249,16 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     };
 
+
+    $scope.grid1Click = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+    };
+
+
+    $scope.grid5Click = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+    };
+
 }]);
 
 Application.$controller("grid1Controller", ["$scope",

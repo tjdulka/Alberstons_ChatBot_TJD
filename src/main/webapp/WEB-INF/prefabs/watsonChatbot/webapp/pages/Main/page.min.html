@@ -238,7 +238,7 @@ var _MainPage_Variables_ ={
 <wm-page data-ng-controller="WatsonChatbotController" name="page1">
     <wm-content name="content1">
         <wm-container name="chatcontent" overflow="auto" class="chat-content">
-            <wm-livelist itemclass="" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list chat" dataset="bind:_dataset" navigation="None" name="chatmessageList" nodatamessage="Start Chat by entering message" listclass="list-group">
+            <wm-livelist template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list chat" dataset="bind:_dataset" navigation="None" name="chatmessageList" nodatamessage="Start Chat by entering message" listclass="list-group">
                 <wm-listtemplate layout="inline" name="listtemplate1">
                     <wm-container ng-if="!!item.usermessage" name="container5">
                         <wm-container class="popover pull-right user-message" ng-if="!!item.usermessage" name="container5">
@@ -260,7 +260,8 @@ var _MainPage_Variables_ ={
                         <wm-text name="message" height="30pt" placeholder="Enter your message here" disabled="bind:isBotBusy"></wm-text>
                     </wm-container>
                     <wm-container class="media-right media-middle" name="gridcolumn2">
-                        <wm-button class="btn-transparent" type="submit" margin="unset 0.5em" name="sendBtn" iconclass="wi wi-paper-plane" fontsize="18" fontunit="pt" width="60%" on-click="sendBtnClick($event, $scope)"></wm-button>
+                        <wm-button class="btn-transparent" type="submit" margin="unset 0.5em" name="sendBtn" iconclass="wi wi-paper-plane" fontsize="18" fontunit="pt" width="60%" on-click="sendBtnClick($event, $scope)" iconurl="resources/images/imagelists/Watson_Logo_New_Larger.png"
+                        iconwidth="25" iconheight="20"></wm-button>
                     </wm-container>
                 </wm-container>
             </wm-form>

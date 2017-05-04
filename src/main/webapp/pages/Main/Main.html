@@ -29,7 +29,7 @@
                             <wm-prefab prefabname="googlemaps" name="googlemaps1" locations="bind:Variables.svcOrderLocation.dataSet.results.ORDER_STATUS" lat="TRUCK_LOCATION_LAT" lng="TRUCK_LOCATION_LNG" info="TRUCK_ID" icon="DELIVERY_TIME" zoom="10"></wm-prefab>
                         </wm-container>
                         <wm-container name="OrdersContainer">
-                            <wm-grid title="" dataset="bind:Variables.svcOrders.dataSet.results.ORDERS" navigation="Pager" name="grid1" pagesize="10">
+                            <wm-grid title="" dataset="bind:Variables.svcOrders.dataSet.results.ORDERS" navigation="Pager" name="grid1" pagesize="10" on-click="grid1Click($event, $scope, $rowData)">
                                 <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false" on-click="ORDER_NBROnClick($event, $scope, rowData)"></wm-grid-column>
                                 <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
@@ -66,7 +66,7 @@
                         <wm-container name="OrdersByStoreContainer">
                             <wm-label padding="unset 0.5em" caption="Store:" fontweight="bold" name="label7"></wm-label>
                             <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrdersByStore.dataSet.results.DEST_FACILITY_ID" name="label8"></wm-label>
-                            <wm-grid title="" dataset="bind:Variables.svcOrdersByStore.dataSet.results.ORDERS" navigation="Pager" name="grid5" pagesize="10">
+                            <wm-grid title="" dataset="bind:Variables.svcOrdersByStore.dataSet.results.ORDERS" navigation="Pager" name="grid5" pagesize="10" on-click="grid5Click($event, $scope, $rowData)">
                                 <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
