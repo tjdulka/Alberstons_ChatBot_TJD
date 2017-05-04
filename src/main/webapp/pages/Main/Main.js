@@ -29,6 +29,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
                 $scope.Variables.store.dataSet = {
                     "dataValue": input.text
                 };
+                /* if order by user, show list of orders by named user */
             } else if (output_text[0].startsWith('(--OMS_GET_ORDERS_USER--)')) {
                 var input = _.get(data, 'input');
                 output_text[0] = 'I will find a list of orders by user ' + input.text;
