@@ -4,7 +4,7 @@
   "templateUrl" : "/pages/Main/Main.html",
   "controllerUrl" : "/pages/Main/Main.js",
   "variablesUrl" : "/pages/Main/Main.variables.json",
-  "iconUrl" : "/resources/images/imagelists/Watson Logo New Larger.png",
+  "iconUrl" : "/resources/images/imagelists/download.png",
   "resources" : {
     "styles" : [ "/pages/Main/Main.css" ],
     "scripts" : [ ],
