@@ -147,6 +147,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
     };
 
     $scope.svcOrderDetailonResult = function(variable, data) {
+        /*
         if (data.results.ORDER_NBR != '') {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = false;
@@ -159,6 +160,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Widgets.OEByStoreContainer.show = false;
             $scope.Widgets.OEByProductAndStoreContainer.show = false;
         };
+        */
     };
 
     $scope.svcOrdersonResult = function(variable, data) {
@@ -257,6 +259,12 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     $scope.grid5Click = function($event, $isolateScope, $rowData) {
         console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+
+
     };
 
 }]);

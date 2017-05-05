@@ -37,16 +37,6 @@
                                 <wm-grid-column binding="DEST_FACILITY_ID" caption="Store" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                             </wm-grid>
                         </wm-container>
-                        <wm-container name="OrderDetailContainer">
-                            <wm-label padding="unset 0.5em" caption="Order Number:" fontweight="bold" name="label19"></wm-label>
-                            <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderDetail.dataSet.results.ORDER_NBR" name="label20"></wm-label>
-                            <wm-grid title="" dataset="bind:Variables.svcOrderDetail.dataSet.results.ORDER_DETAIL" navigation="Pager" name="grid4" spacing="normal" pagesize="10">
-                                <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="40%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                <wm-grid-column binding="SHIP_QTY" caption="Order Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                            </wm-grid>
-                        </wm-container>
                         <wm-container name="container5">
                             <wm-container name="OrdersByProductContainer">
                                 <wm-label padding="unset 0.5em" caption="Product:" fontweight="bold" name="label5"></wm-label>
@@ -125,6 +115,18 @@
                                 <wm-grid-column binding="SHIP_QTY" caption="Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                             </wm-grid>
+                        </wm-container>
+                        <wm-container name="container13">
+                            <wm-container name="OrderDetailContainer">
+                                <wm-label padding="unset 0.5em" caption="Order Number:" fontweight="bold" name="label19"></wm-label>
+                                <wm-label padding="unset 0.5em" caption="bind:Variables.svcOrderDetail.dataSet.results.ORDER_NBR" name="label20"></wm-label>
+                                <wm-grid title="" dataset="bind:Variables.svcOrderDetail.dataSet.results.ORDER_DETAIL" navigation="Pager" name="grid4" spacing="normal" pagesize="10">
+                                    <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="40%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="SHIP_QTY" caption="Order Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                    <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                </wm-grid>
+                            </wm-container>
                         </wm-container>
                     </wm-gridcolumn>
                 </wm-gridrow>
