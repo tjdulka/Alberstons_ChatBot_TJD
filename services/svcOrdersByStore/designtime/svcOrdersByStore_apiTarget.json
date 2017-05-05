@@ -3,7 +3,7 @@
   "info" : {
     "version" : "2.0",
     "x-WM-SERVICE_TYPE" : "RestService",
-    "x-WM-API_ID" : "3ca1628e-6d93-4c93-9012-52f0d1eb42da",
+    "x-WM-API_ID" : "21bf8d0a-2204-4ec7-a97c-ba391750a569",
     "x-WM-USE_PROXY_FOR_WEB" : true,
     "x-WM-SERVICE_ID" : "mybluemix",
     "x-WM-USE_PROXY_FOR_MOBILE" : true
@@ -83,8 +83,11 @@
       "x-WM-TAGS" : [ "RestServiceVirtualController" ]
     },
     "ORDERSEntryItem" : {
-      "required" : [ "ORDER_DT", "ORDER_NBR", "SHIP_FACILITY_ID" ],
+      "required" : [ "ORDER_DT", "ORDER_NBR", "SCHEDULE_DELIVERY_DT", "SHIP_FACILITY_ID" ],
       "properties" : {
+        "SCHEDULE_DELIVERY_DT" : {
+          "type" : "string"
+        },
         "SHIP_FACILITY_ID" : {
           "type" : "integer",
           "format" : "int32"

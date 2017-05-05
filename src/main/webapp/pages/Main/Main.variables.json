@@ -209,10 +209,10 @@
       "target" : "wm_auth_password",
       "value" : "bind:Variables.OmsPassword.dataSet.dataValue"
     } ],
-    "type" : "svcGetOrderExceptionsByProductAndStore.RootResponse",
-    "service" : "svcGetOrderExceptionsByProductAndStore",
+    "type" : "svcOrderExceptionsByProductAndStore.RootResponse",
+    "service" : "svcOrderExceptionsByProductAndStore",
     "operation" : "invoke",
-    "operationId" : "svcGetOrderExceptionsByProductAndStore_RestServiceVirtualController-invoke",
+    "operationId" : "svcOrderExceptionsByProductAndStore_RestServiceVirtualController-invoke",
     "operationType" : "get",
     "serviceType" : "RestService",
     "dataSet" : [ ],

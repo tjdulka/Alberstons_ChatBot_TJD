@@ -63,6 +63,7 @@
                                 <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="ORDER_DT" caption="Order Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SHIP_FACILITY_ID" caption="Whse" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" textalignment="center" show="true" readonly="undefined"></wm-grid-column>
                             </wm-grid>
                         </wm-container>
                         <wm-container name="OrdersByUserContainer">
@@ -114,7 +115,8 @@
                                 <wm-grid-column binding="ORDER_NBR" caption="Order" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SCHEDULE_DELIVERY_DT" caption="Delivery Date" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="ITEM_DSC" caption="Item" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
-                                <wm-grid-column binding="DISCREPENCY_DSC" caption="Exception" type="string" width="30%" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
+                                <wm-grid-column binding="DISCREPENCY_REASON_DSC" caption="Reason" show="true" readonly="undefined"></wm-grid-column>
+                                <wm-grid-column binding="DISCREPENCY_DISPLAY_DSC" caption="Action" show="true" readonly="undefined"></wm-grid-column>
                                 <wm-grid-column binding="ORDER_QTY" caption="Order Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="SHIP_QTY" caption="Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
                                 <wm-grid-column binding="EXE_SHIP_QTY" caption="Whse Ship Qty" type="string" textalignment="center" edit-widget-type="text" show="true" readonly="false"></wm-grid-column>
