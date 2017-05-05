@@ -134,7 +134,7 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
             $scope.Widgets.OrdersContainer.show = false;
             $scope.Widgets.OrderStatusContainer.show = true;
             $scope.Widgets.OrderLocationContainer.show = true;
-            $scope.Widgets.OrderDetailContainer.show = false;
+            $scope.Widgets.OrderDetailContainer.show = true;
             $scope.Widgets.OrdersByProductContainer.show = false;
             $scope.Widgets.OrdersByStoreContainer.show = false;
             $scope.Widgets.OrdersByUserContainer.show = false;
@@ -267,9 +267,93 @@ Application.$controller("MainPageController", ["$scope", function($scope) {
 
     };
 
+
+    $scope.OrdersGridRowclick = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+
+    };
+
+
+    $scope.OrdersGridRowdblclick = function($event, $isolateScope, $rowData) {
+        $scope.Widgets.askWatson.send($rowData.ORDER_NBR.toString());
+        $scope.Widgets.askWatson.enablechat();
+    };
+
+
+    $scope.OrdersByProductGridRowclick = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+
+    };
+
+
+    $scope.OrdersByProductGridRowdblclick = function($event, $isolateScope, $rowData) {
+        var order = $rowData.ORDER_NBR.toString();
+
+
+        $scope.Variables.order_for_status.dataSet = {
+            "dataValue": order
+        };
+        $scope.Variables.order_for_location.dataSet = {
+            "dataValue": order
+        };
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": order
+        };
+    };
+
+
+    $scope.OrdersByStoreGridRowclick = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+
+    };
+
+
+    $scope.OrdersByStoreGridRowdblclick = function($event, $isolateScope, $rowData) {
+        $scope.Widgets.askWatson.send($rowData.ORDER_NBR.toString());
+        $scope.Widgets.askWatson.enablechat();
+    };
+
+
+    $scope.OrdersByProductAndStoreGridRowclick = function($event, $isolateScope, $rowData) {
+        console.log('The row data with index: ', $rowData);
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": $rowData.ORDER_NBR
+        };
+        $scope.Widgets.OrderDetailContainer.show = true;
+
+    };
+
+
+    $scope.OrdersByProductAndStoreGridRowdblclick = function($event, $isolateScope, $rowData) {
+        var order = $rowData.ORDER_NBR.toString();
+
+
+        $scope.Variables.order_for_status.dataSet = {
+            "dataValue": order
+        };
+        $scope.Variables.order_for_location.dataSet = {
+            "dataValue": order
+        };
+        $scope.Variables.order_for_detail.dataSet = {
+            "dataValue": order
+        };
+    };
+
 }]);
 
-Application.$controller("grid1Controller", ["$scope",
+Application.$controller("OrdersGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
@@ -281,63 +365,133 @@ Application.$controller("grid1Controller", ["$scope",
     }
 ]);
 
-Application.$controller("grid3Controller", ["$scope",
+Application.$controller("OrderStatusGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid4Controller", ["$scope",
+Application.$controller("OrderDetailsGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid4_1Controller", ["$scope",
+Application.$controller("OrdersByProductGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid5Controller", ["$scope",
+Application.$controller("OrdersByStoreGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid6Controller", ["$scope",
+Application.$controller("OrdersByUserGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid7Controller", ["$scope",
+Application.$controller("OrdersByProductAndStoreGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid8Controller", ["$scope",
+Application.$controller("OEByStoreGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid9Controller", ["$scope",
+Application.$controller("OEByProductAndStoreGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }
 ]);
 
-Application.$controller("grid11Controller", ["$scope",
+Application.$controller("OrderLocationGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrderStatusGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrderLocationGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrdersGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrdersByProductGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrdersByStoreGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrdersByUserGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrdersByProductAndStoreGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OEByStoreGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OEByProductAndStoreGridController", ["$scope",
+    function($scope) {
+        "use strict";
+        $scope.ctrlScope = $scope;
+    }
+]);
+
+Application.$controller("OrderDetailsGridController", ["$scope",
     function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
